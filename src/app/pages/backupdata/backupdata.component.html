@@ -3,7 +3,6 @@
            <mat-form-field class="searchBackUpinput">
                <input matInput placeholder="Buscar" [(ngModel)] = "backupfilter">
             </mat-form-field>
-            <button mat-raised-button color="accent"  class ="btnSearch" (click) ="openDialogNew()" >Nuevo</button>
         </div>
         <div class="cardBackupAll">
              <mat-card class="cardBackup" *ngFor = "let list of backupList | filter:backupfilter">

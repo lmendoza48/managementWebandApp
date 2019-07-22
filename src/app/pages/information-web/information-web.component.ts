@@ -13,6 +13,7 @@ export class InformationWebComponent implements OnInit {
 
   webList :  WebinformationModel[];
   dialogRef : MatDialogRef<PopWebComponent>;
+  datafilter : string;
 
   constructor(public service : WebinformationService, public dialog : MatDialog) { }
 

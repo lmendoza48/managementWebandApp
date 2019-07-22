@@ -11,6 +11,7 @@ import { MatSnackBar } from '@angular/material';
 export class BackupdataComponent implements OnInit {
 
   backupList : WebinformationModel[];
+  backupfilter : string;
 
   constructor(public services : WebinformationService, private snackBar: MatSnackBar) { }
 

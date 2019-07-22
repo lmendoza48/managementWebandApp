@@ -14,7 +14,7 @@ export class AppComponent {
 
   constructor(public router : Router) {}
 
-  onClickData( flag : string){
+  onClickData( flag? : string){
     this.sidenav.close();
     if(flag != undefined )
        this.router.navigate(['/'+flag]);
