@@ -1,0 +1,26 @@
+<mat-sidenav-container class="sidenavStyle" (backdropClick)="onClickData()">
+  <mat-sidenav #sidenav  (keydown.escape)="onClickData()" disableClose>
+    <mat-toolbar>Menu</mat-toolbar>
+      <mat-nav-list>
+        <a mat-list-item (click) = "onClickData('/')">Inicio</a>
+        <a mat-list-item (click) = "onClickData('informations')">Informacion WEB</a>
+        <a mat-list-item (click) = "onClickData('messages')" >Responder Preguntas</a>
+        <a mat-list-item (click) = "onClickData('informations')" >Informacion APP</a>
+        <a mat-list-item (click) = "onClickData('backup')" >Recuperar Informacion</a>
+      </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="accent">
+        <button
+          type="button"
+          mat-icon-button
+          (click)="sidenav.open()"
+          >
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+      </mat-toolbar>
+   <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

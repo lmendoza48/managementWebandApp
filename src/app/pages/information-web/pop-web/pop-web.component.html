@@ -1,0 +1,23 @@
+<section>
+    <div class="closeDialog">
+        <button mat-button color="accent" (click) = "onCloseDialog()">X</button>
+    </div>
+   <form #formWeb="ngForm" (ngSubmit) = "onSaveDataWebAndupdate(formWeb)">
+        <div class="formWebDialog"> 
+            <input type="hidden" name="$key" #$key="ngModel" [(ngModel)] = "servics.listInform.$key" >
+            <mat-form-field>
+            <input matInput placeholder="Titulo" type="text" name="title" #title="ngModel" [(ngModel)]="servics.listInform.title">
+            </mat-form-field> 
+            <mat-form-field>
+            <input matInput placeholder="Url Imagen" type="text" name="urlImg" #urlImg="ngModel" [(ngModel)]="servics.listInform.urlImg" >
+            </mat-form-field> 
+            <mat-form-field>
+            <textarea matInput placeholder="Contenido" type="text" name="alltext" #alltext="ngModel" [(ngModel)]="servics.listInform.alltext" rows="10" required></textarea>
+            </mat-form-field>
+            <div class="btnPopUp">
+                <button mat-stroked-button color="accent" type="submit" [disabled]="!formWeb.valid">Guardar</button>
+            </div>
+        </div>
+    </form>       
+</section>   
+

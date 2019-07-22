@@ -1,0 +1,28 @@
+<mat-tab-group class="allMessages">
+    <mat-tab label="Mensajes No leidos"> 
+         <mat-card class="cardMsgContact" *ngFor="let cct of emailList">
+            <mat-card-title>
+                {{cct.title}}
+            </mat-card-title>
+            <mat-card-content>
+                  {{cct.alltext | slice:0:100}}...
+            </mat-card-content>
+            <mat-card-actions align="right">
+                <button mat-button color="accent" (click) = "openViewMsg(cct,true)">Ver</button>
+            </mat-card-actions>
+         </mat-card>
+    </mat-tab>
+    <mat-tab label="Mensajes Leidos">
+        <mat-card class="cardMsgContact" *ngFor="let cview of viewEmail">
+            <mat-card-title>
+                 {{cview.title}}
+            </mat-card-title>
+            <mat-card-content>
+                   {{cview.alltext | slice:0:100}}...
+            </mat-card-content>
+            <mat-card-actions align="right">
+                <button mat-button color="accent" (click) = "openViewMsg(cview,false)">Ver</button>
+            </mat-card-actions>
+        </mat-card>
+    </mat-tab>
+</mat-tab-group>

@@ -1,0 +1,24 @@
+<section>
+        <div class="searchBackUp">
+           <mat-form-field class="searchBackUpinput">
+               <input matInput placeholder="Buscar" [(ngModel)] = "backupfilter">
+            </mat-form-field>
+            <button mat-raised-button color="accent"  class ="btnSearch" (click) ="openDialogNew()" >Nuevo</button>
+        </div>
+        <div class="cardBackupAll">
+             <mat-card class="cardBackup" *ngFor = "let list of backupList | filter:backupfilter">
+                     <mat-card-header>
+                         <mat-card-title>{{list.title}}</mat-card-title>
+                     </mat-card-header>
+                     <mat-card-content>
+                        <p style="text-align: right;" >
+                            {{list.day | date:'fullDate'}}
+                        </p>
+                     </mat-card-content>
+                     <mat-card-actions align="right">
+                          <button mat-button (click) = deleteComplet(list) >Eliminar Definitivo</button>
+                          <button mat-button color="accent" (click) = "getBackList(list)">Recuperar</button>
+                     </mat-card-actions>
+             </mat-card>
+        </div>
+     </section>

@@ -1,0 +1,10 @@
+.formWebDialog {
+    display: flex;
+    flex-direction: column;
+  }
+.formWebDialog > * {
+    width: 100%;
+}
+.btnPopUp,.closeDialog{
+    text-align: right;
+}

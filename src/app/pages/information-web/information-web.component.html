@@ -1,0 +1,26 @@
+<section>
+   <div class="serchD">
+      <mat-form-field class="searchCompo">
+          <input matInput placeholder="Buscar" [(ngModel)] = "datafilter">
+       </mat-form-field>
+       <button mat-raised-button color="accent"  class ="btnSearch" (click) ="openDialogNew()" >Nuevo</button>
+   </div>
+   <div class="cardWeball">
+        <mat-card class="cardWeb" *ngFor = "let list of webList | filter:datafilter">
+                <mat-card-header>
+                    <mat-card-title>{{list.title}}</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                   <p style="text-align: right;" >
+                       {{list.day | date:'fullDate'}}
+                   </p>
+                </mat-card-content>
+                <mat-card-actions align="right">
+                     <button mat-button (click) = onDeleteData(list) >Eliminar</button>
+                     <button mat-button (click) = "updateDataDialog(list)">Actualizar</button>
+                </mat-card-actions>
+        </mat-card>
+   </div>
+</section> 
+ 
+

@@ -1,0 +1,8 @@
+.allMessages{
+    height: -webkit-fill-available;
+}
+.cardMsgContact{
+    width: 50%;
+    margin: 1rem;
+    float: left;
+}    

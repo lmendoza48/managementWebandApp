@@ -1,0 +1,16 @@
+<section>
+    <mat-list>
+       <mat-list-item> 
+                {{ title }}  
+       </mat-list-item>
+       <mat-list-item class="subTitle"> 
+            <small> {{ email }} - {{daySend | date }} </small> 
+       </mat-list-item>
+        <mat-divider></mat-divider>
+       <mat-list-item> {{comment}} </mat-list-item>
+        <mat-divider></mat-divider>
+       <div class="btnEmailc">
+            <button mat-raised-button color="accent"> Responder </button>
+       </div>
+   </mat-list>
+</section>
