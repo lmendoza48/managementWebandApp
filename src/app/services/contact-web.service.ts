@@ -5,14 +5,14 @@ import { ContactModel } from '../models/contact-model';
 @Injectable({
   providedIn: 'root'
 })
-export class ContactService {
+export class ContactServiceWeb {
    
   private conectDBContact : AngularFireList<any>;
   listContact : ContactModel = new ContactModel();
 
   constructor(private dbContactFire : AngularFireDatabase) { }
 
-  getConectContact(){
+  getAllDataContact(){
     return this.conectDBContact = this.dbContactFire.list('/dataMessage');
   }
 

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AppInformationService } from 'src/app/services/app.information.service';
+import { MatDialog, MatDialogRef } from '@angular/material';
+import { PopAppComponent } from './pop-app/pop-app.component';
+import { AppModels } from 'src/app/models/app.models';
 
 @Component({
   selector: 'app-information-app',
@@ -7,9 +11,43 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InformationAPPComponent implements OnInit {
 
-  constructor() { }
+  dialogRef : MatDialogRef<PopAppComponent>;
+  appList : AppModels[]; 
+  filterAPP : string = '';
+
+  constructor(public servicesAPP : AppInformationService, public dialog : MatDialog) { }
 
   ngOnInit() {
+    let appH = this.servicesAPP.getConectListApp();
+    appH.snapshotChanges().subscribe( mobil => {
+       this.appList = [];
+       mobil.forEach( item => {
+         let u = item.payload.toJSON();
+         u["$key"] = item.key;
+         this.appList.push(u as AppModels);
+       });
+    });
+  }
+  
+  openDialogNewAPP(){
+    this.dialogRef = this.dialog.open(PopAppComponent,{
+      width: '800px',
+      height: '35rem',
+    });
+    this.dialogRef.afterClosed().subscribe(result => {
+           this.servicesAPP.dataApp = new AppModels();
+    });
+  }
+
+  updateDataDialogAPP(item : AppModels){
+     this.servicesAPP.dataApp = Object.assign({}, item);
+     this.openDialogNewAPP();
+  }
+
+  onDeleteAPP(itemDelete : AppModels){
+    if(confirm('¿Estas seguro de Eliminar este Dato?') == true){
+      console.info('aun no se puede borrar', itemDelete);
+     }
   }
 
 }

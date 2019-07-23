@@ -1,0 +1,30 @@
+<section>
+    <div class="closeDialogAPP">
+        <button mat-button color="accent" (click) = "onCloseDialogApp()">X</button>
+    </div>
+   <form #formAPP="ngForm" (ngSubmit) = "onSaveDataAPPAndupdate(formAPP)">
+        <div class="formAPPDialog"> 
+            <input type="hidden" name="$key" #$key="ngModel" [(ngModel)] = "servicesAPP.dataApp.$key" >
+            <mat-form-field>
+            <input matInput placeholder="Titulo" type="text" name="titleApp" #titleApp="ngModel" [(ngModel)]="servicesAPP.dataApp.titleApp">
+            </mat-form-field> 
+            <mat-form-field>
+            <input matInput placeholder="Url Imagen" type="text" name="urlImgApp"  #urlImgApp="ngModel" [(ngModel)]="servicesAPP.dataApp.urlImgApp">
+            </mat-form-field> 
+            <mat-form-field>
+               <mat-label>Año del Tema</mat-label>
+                <mat-select name="monthApp" #monthApp="ngModel"  [(ngModel)] = "servicesAPP.dataApp.monthApp" >
+                  <mat-option value="primer"> 1° año</mat-option>
+                  <mat-option value="segundo"> 2° año</mat-option>
+                  <mat-option value="tercer"> 3° año</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+            <textarea matInput placeholder="Contenido" type="text" name="contentApp"  #contentApp="ngModel"  [(ngModel)]="servicesAPP.dataApp.contentApp" rows="10" required></textarea>
+            </mat-form-field>
+            <div class="btnPopUpApp">
+                <button mat-stroked-button color="accent" type="submit" [disabled]="!formAPP.valid">Guardar</button>
+            </div>
+        </div>
+    </form>       
+</section>   

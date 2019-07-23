@@ -8,3 +8,10 @@
     width: 30%;
     margin: 1rem;
 }
+
+@media only screen and (max-width: 800px) {
+    .cardBackup{
+        width: -webkit-fill-available;
+        margin-right: 1rem;
+    }
+}

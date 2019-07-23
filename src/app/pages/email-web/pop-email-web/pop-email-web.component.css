@@ -1,13 +1,14 @@
-.btnEmailc{
+.btnEmailWebc{
     text-align: right;
     margin-top: 2rem;
     margin-right: 0.5rem;
 }
-.subTitle{
+.subTitleWebc{
     margin-top: -1rem;
 }
+
 @media only screen and (max-width: 800px) {
-    .subTitle{
+    .subTitleWebc{
         margin-top: 0rem;
     }
 }

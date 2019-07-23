@@ -8,12 +8,11 @@ import { HomeComponent } from './pages/home/home.component';
 import { InformationWebComponent } from './pages/information-web/information-web.component';
 import { InformationAPPComponent } from './pages/information-app/information-app.component';
 import { EmailMngComponent } from './pages/email-mng/email-mng.component';
-import { PopdataComponent } from './pages/information-app/popdata/popdata.component';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
-import { ContactService } from './services/contact.service';
+import { ContactServiceWeb } from './services/contact-web.service';
 import { WebinformationService } from './services/webinformation.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BackupdataComponent } from './pages/backupdata/backupdata.component';
@@ -21,6 +20,11 @@ import { MaterialComponent } from './material-angular/material.component';
 import { PopWebComponent } from './pages/information-web/pop-web/pop-web.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { PopEmailComponent } from './pages/email-mng/pop-email/pop-email.component';
+import { EmailWebComponent } from './pages/email-web/email-web.component';
+import { PopEmailWebComponent } from './pages/email-web/pop-email-web/pop-email-web.component';
+import { PopAppComponent } from './pages/information-app/pop-app/pop-app.component';
+import { MngContactappService } from './services/mng-contactapp.service';
+import { AppInformationService } from './services/app.information.service';
 
 @NgModule({
   declarations: [
@@ -29,10 +33,13 @@ import { PopEmailComponent } from './pages/email-mng/pop-email/pop-email.compone
     InformationWebComponent,
     InformationAPPComponent,
     EmailMngComponent,
-    PopdataComponent,
+    PopAppComponent,
     BackupdataComponent,
     PopWebComponent,
-    PopEmailComponent
+    PopEmailComponent,
+    EmailWebComponent,
+    PopEmailWebComponent,
+    PopAppComponent
   ],
   imports: [
     BrowserModule,
@@ -46,11 +53,15 @@ import { PopEmailComponent } from './pages/email-mng/pop-email/pop-email.compone
   ],
   entryComponents:[
     PopWebComponent,
-    PopEmailComponent
+    PopEmailComponent,
+    PopAppComponent,
+    PopEmailWebComponent
   ],
   providers: [
-    ContactService,
-    WebinformationService
+    ContactServiceWeb,
+    WebinformationService,
+    MngContactappService,
+    AppInformationService
   ],
   bootstrap: [AppComponent]
 })

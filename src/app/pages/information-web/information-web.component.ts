@@ -46,6 +46,7 @@ export class InformationWebComponent implements OnInit {
 
   onDeleteData( item : WebinformationModel){
     if(confirm('¿Estas seguro de Eliminar este Dato?') == true){
+         this.service.backupSaveList(item);
          this.service.deleteInformation(item);
     }
   }

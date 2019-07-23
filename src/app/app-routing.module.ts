@@ -4,6 +4,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { InformationWebComponent } from './pages/information-web/information-web.component';
 import { EmailMngComponent } from './pages/email-mng/email-mng.component';
 import { BackupdataComponent } from './pages/backupdata/backupdata.component';
+import { InformationAPPComponent } from './pages/information-app/information-app.component';
+import { EmailWebComponent } from './pages/email-web/email-web.component';
 
 
 const routes: Routes = [
@@ -12,12 +14,20 @@ const routes: Routes = [
    component:HomeComponent
   },
   {
-    path:'informations',
+    path:'informationsWEB',
     component: InformationWebComponent
   },
   {
-    path:'messages',
+    path:'informationsAPP',
+    component: InformationAPPComponent
+  },
+  {
+    path:'messagesAPP',
     component: EmailMngComponent
+  },
+  {
+    path:'messagesWEB',
+    component: EmailWebComponent
   },
   {
     path:'backup',

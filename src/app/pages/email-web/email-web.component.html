@@ -1,6 +1,6 @@
-<mat-tab-group class="allMessages">
+<mat-tab-group class="allMessagesWEB">
     <mat-tab label="Sin responder"> 
-         <mat-card class="cardMsgContact" *ngFor="let cct of emailList">
+         <mat-card class="cardMsgContactWEB" *ngFor="let cct of listWebCct">
             <mat-card-title>
                 {{cct.title}}
             </mat-card-title>
@@ -8,12 +8,12 @@
                   {{cct.alltext | slice:0:100}}...
             </mat-card-content>
             <mat-card-actions align="right">
-                <button mat-button color="accent" (click) = "openViewMsg(cct,true)">Ver</button>
+                <button mat-button color="accent" (click) = "openViewMsgWeb(cct,true)">Ver</button>
             </mat-card-actions>
          </mat-card>
     </mat-tab>
     <mat-tab label="Respondidos">
-        <mat-card class="cardMsgContact" *ngFor="let cview of viewEmail">
+        <mat-card class="cardMsgContactWEB" *ngFor="let cview of readWebcct">
             <mat-card-title>
                  {{cview.title}}
             </mat-card-title>
@@ -21,7 +21,7 @@
                    {{cview.alltext | slice:0:100}}...
             </mat-card-content>
             <mat-card-actions align="right">
-                <button mat-button color="accent" (click) = "openViewMsg(cview,false)">Ver</button>
+                <button mat-button color="accent" (click) = "openViewMsgWeb(cview,false)">Ver</button>
             </mat-card-actions>
         </mat-card>
     </mat-tab>

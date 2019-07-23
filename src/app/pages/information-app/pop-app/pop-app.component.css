@@ -1,0 +1,10 @@
+.formAPPDialog {
+    display: flex;
+    flex-direction: column;
+  }
+.formAPPDialog > * {
+    width: 100%;
+}
+.btnPopUpApp,.closeDialogAPP{
+    text-align: right;
+}

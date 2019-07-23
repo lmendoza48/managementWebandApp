@@ -1,17 +1,14 @@
-.searchAPP{
-    width: 30%;
-    margin: 1rem;
+.allMessagesWEB{
+    height: -webkit-fill-available;
 }
-.cardAPPall{
-    width: 25%;
-    height: 9rem;
+.cardMsgContactWEB{
+    width: 50%;
     margin: 1rem;
     float: left;
-}
-
+}  
 @media only screen and (max-width: 800px) {
-    .cardAPPall{
+    .cardMsgContactWEB{
         width: -webkit-fill-available;
         margin-right: 1rem;
     }
-}
+}  

@@ -18,14 +18,13 @@ export class WebinformationService {
   }
 
   insertAllInformation(data : WebinformationModel){
-    var date = Date.now();
+    let date = Date.now();
     this.information.push({
       title : data.title,
       alltext : data.alltext,
       urlImg : data.urlImg,
       day : date
     });
-    this.backupSaveList(data,date,true);
   }
   
   updateDataInformation(data : WebinformationModel){
@@ -36,7 +35,6 @@ export class WebinformationService {
       urlImg : data.urlImg,
       day : date
     });
-    this.backupSaveList(data,date,false);
   }
 
   deleteInformation(data : WebinformationModel){
@@ -47,25 +45,17 @@ export class WebinformationService {
     return this.backupInfo = this.dbFirebase.list('/backupdata');
   }
 
-  backupSaveList( info : WebinformationModel, dateText , flag : boolean){
-    this.backupInfo = this.dbFirebase.list('/backupdata');
-    if(flag){
+  backupSaveList( info : WebinformationModel){
+      this.getBackupList();
+      let dayM = Date.now();
       this.backupInfo.push({
         title : info.title,
         alltext : info.alltext,
         urlImg : info.urlImg,
-        day : dateText
+        day : dayM
       })
-    }else{
-      this.backupInfo.update( info.$key, {
-        title : info.title,
-        alltext : info.alltext,
-        urlImg : info.urlImg,
-        day : dateText
-      })
-    }  
   }
-
+  
   onDeleteBackupList(item : WebinformationModel){
      this.backupInfo.remove(item.$key);
   }

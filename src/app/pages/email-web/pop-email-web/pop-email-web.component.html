@@ -1,0 +1,16 @@
+<section>
+    <mat-list>
+       <mat-list-item> 
+                {{ titleWeb }}  
+       </mat-list-item>
+       <mat-list-item class="subTitleWebc"> 
+            <small> {{ emailWeb }} - {{daySendWeb | date:'short' }} </small> 
+       </mat-list-item>
+        <mat-divider></mat-divider>
+       <mat-list-item> {{commentWeb}} </mat-list-item>
+        <mat-divider></mat-divider>
+       <div class="btnEmailWebc">
+            <button mat-raised-button color="accent"> Responder </button>
+       </div>
+   </mat-list>
+</section>

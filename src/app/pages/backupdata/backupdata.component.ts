@@ -28,7 +28,8 @@ export class BackupdataComponent implements OnInit {
   }
 
   getBackList(item: WebinformationModel){
-     this.services.updateDataInformation(item);
+     this.services.insertAllInformation(item);
+     this.services.onDeleteBackupList(item);
      let msg = 'Listo! informacion recuperada';
      this.openSnackBar(msg);
   }

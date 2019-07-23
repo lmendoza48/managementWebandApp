@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ContactService } from 'src/app/services/contact.service';
+import { ContactServiceWeb } from 'src/app/services/contact-web.service';
 import { ContactModel } from 'src/app/models/contact-model';
 import { MatDialogRef, MatDialog } from '@angular/material';
 import { PopEmailComponent } from './pop-email/pop-email.component';
+import { AppInformationService } from 'src/app/services/app.information.service';
+import { MngContactappService } from 'src/app/services/mng-contactapp.service';
 
 @Component({
   selector: 'app-email-mng',
@@ -15,35 +17,39 @@ export class EmailMngComponent implements OnInit {
   viewEmail : ContactModel[];
   dialogRef : MatDialogRef<PopEmailComponent>;
 
-  constructor(private servContact : ContactService, public dialog : MatDialog ) { }
+  constructor(private servContact : MngContactappService, 
+              public dialog : MatDialog,
+              public servTemas : AppInformationService ) { }
 
   ngOnInit() {
-    let cc = this.servContact.getConectContact();
-    cc.snapshotChanges().subscribe(item => {
-     this.emailList = [];
-     this.viewEmail = [];
-     item.forEach( element =>{
-         let y = element.payload.toJSON();
-         y["$key"] = element.key;
-         if(y["flag"] === true){
-            this.emailList.push(y as ContactModel);
-         }else{
-            this.viewEmail.push(y as ContactModel);
-         }
-     });
-   });
+    let info = this.servTemas.getConectListApp();
+    info.snapshotChanges().subscribe(info =>{
+      info.forEach( item=>{
+         let dat = item.payload.toJSON();
+         let tem = dat["title"];
+         let msg = this.servContact.getAllDataContactApp(tem);
+          msg.snapshotChanges().subscribe( msgList =>{
+            this.emailList = [];
+            this.viewEmail = [];
+            msgList.forEach( element =>{
+              let y = element.payload.toJSON();
+              y["$key"] = element.key;
+              if(y["flag"] === true){
+                this.emailList.push(y as ContactModel);
+              }else{
+                this.viewEmail.push(y as ContactModel);
+              }
+          });
+        });
+      });
+    });
   }
 
   openViewMsg(item : ContactModel, flagModel : boolean){
-    if(flagModel){
-      this.servContact.updateMessageStatus(item);
-    } 
-
     sessionStorage.setItem('title', item.title);
     sessionStorage.setItem('comment', item.alltext);
     sessionStorage.setItem('email', item.mail);
     sessionStorage.setItem('daySend', item.day.toString());
-
     this.dialogRef = this.dialog.open(PopEmailComponent,{
       width: '800px',
       height: '30rem',
