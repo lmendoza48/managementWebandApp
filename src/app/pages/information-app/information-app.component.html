@@ -6,7 +6,7 @@
         <button mat-raised-button color="accent"  class ="btnSearch" (click) ="openDialogNewAPP()" >Nuevo APP</button>
     </div>
     <div class="cardAPPall">
-         <mat-card class="cardWeb" *ngFor = "let item of appList | filter:filterAPP">
+         <mat-card class="cardAppStyle" *ngFor = "let item of appList | filter:filterAPP">
                  <mat-card-header>
                      <mat-card-title>{{item.titleApp}}</mat-card-title>
                      <mat-card-subtitle> {{item.dayApp | date:'short'}}</mat-card-subtitle>

@@ -2,7 +2,7 @@
     width: 30%;
     margin: 1rem;
 }
-.cardAPPall{
+.cardAppStyle{
     width: 25%;
     height: 9rem;
     margin: 1rem;
@@ -10,7 +10,7 @@
 }
 
 @media only screen and (max-width: 800px) {
-    .cardAPPall{
+    .cardAppStyle{
         width: -webkit-fill-available;
         margin-right: 1rem;
     }
