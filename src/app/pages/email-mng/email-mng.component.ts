@@ -22,6 +22,39 @@ export class EmailMngComponent implements OnInit {
               public servTemas : AppInformationService ) { }
 
   ngOnInit() {
+    let msg = this.servContact.getAllDataContactApp();
+    msg.snapshotChanges().subscribe( msgList =>{
+      this.emailList = [];
+      this.viewEmail = [];
+      msgList.forEach( element =>{
+        let y = element.payload.toJSON();
+        y["$key"] = element.key;
+        if(y["flag"] === true){
+          this.emailList.push(y as ContactModel);
+        }else{
+          this.viewEmail.push(y as ContactModel);
+        }
+      });
+    });
+  }
+
+  openViewMsg(item : ContactModel, viewFlag? : boolean){
+    sessionStorage.setItem('title', item.title);
+    sessionStorage.setItem('comment', item.alltext);
+    sessionStorage.setItem('email', item.mail);
+    sessionStorage.setItem('daySend', item.day.toString());
+    sessionStorage.setItem('key', item.$key);
+    if(!viewFlag){
+      sessionStorage.setItem('answerAp', item.answer);
+    }
+    this.dialogRef = this.dialog.open(PopEmailComponent,{
+      width: '800px',
+      height: '30rem',
+    });
+  }
+
+  /**
+   * logica para otros casos 
     let info = this.servTemas.getConectListApp();
     info.snapshotChanges().subscribe(info =>{
       info.forEach( item=>{
@@ -43,17 +76,6 @@ export class EmailMngComponent implements OnInit {
         });
       });
     });
-  }
-
-  openViewMsg(item : ContactModel, flagModel : boolean){
-    sessionStorage.setItem('title', item.title);
-    sessionStorage.setItem('comment', item.alltext);
-    sessionStorage.setItem('email', item.mail);
-    sessionStorage.setItem('daySend', item.day.toString());
-    this.dialogRef = this.dialog.open(PopEmailComponent,{
-      width: '800px',
-      height: '30rem',
-    });
-  }
+   */
 
 }

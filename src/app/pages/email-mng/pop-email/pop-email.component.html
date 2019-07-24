@@ -1,5 +1,12 @@
 <section>
     <mat-list>
+         <div class="btnAppEm" (click) = "bntClosePopUp()">
+             <button mat-icon-button>
+                    <i class="material-icons">
+                              clear
+                   </i>
+             </button>
+         </div>
        <mat-list-item> 
                 {{ title }}  
        </mat-list-item>
@@ -9,8 +16,16 @@
         <mat-divider></mat-divider>
        <mat-list-item> {{comment}} </mat-list-item>
         <mat-divider></mat-divider>
-       <div class="btnEmailc">
-            <button mat-raised-button color="accent"> Responder </button>
-       </div>
+        
+        <mat-form-field class="inputAnswerS" *ngIf="!flagAns">
+          <textarea matInput placeholder="Respuesta" type="text" name="answerApp" #answerApp="ngModel" [(ngModel)]="contenidoD.answerApp" rows="10" required></textarea>
+        </mat-form-field>
+
+        <div class="btnEmailc" *ngIf="flagAns">
+               <button mat-raised-button color="accent" (click)="onSendAnswer(false)"> Responder </button>
+         </div>
+         <div class="btnEmailc" *ngIf="!flagAns">
+               <button mat-raised-button color="accent" (click)="onSendAnswer(true)"> Enviar </button>
+         </div>
    </mat-list>
 </section>

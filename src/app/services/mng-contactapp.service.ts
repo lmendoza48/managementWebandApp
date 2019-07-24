@@ -12,8 +12,15 @@ export class MngContactappService {
 
   constructor(private dbContactFireApp : AngularFireDatabase) { }
 
-  getAllDataContactApp(tema? : string){
-    return this.conectDBContactApp = this.dbContactFireApp.list('/menssagesAPP/temas_'+tema);
+  getAllDataContactApp(){
+    return this.conectDBContactApp = this.dbContactFireApp.list('/menssagesAPP');
+  }
+
+  saveAnswerDatos(flagAns : boolean, answerS : string, keyData : string){
+    this.conectDBContactApp.update(keyData, {
+        flag : flagAns,
+        answer : answerS
+    });
   }
 
   deleteMsgApp( msg : ContactModel){

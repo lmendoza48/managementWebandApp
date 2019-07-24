@@ -5,4 +5,5 @@ export class ContactModel {
     mail : string;
     day : number;
     name : string;
+    answer: string;
 }
