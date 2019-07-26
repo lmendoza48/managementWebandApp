@@ -1,0 +1,17 @@
+.searchGaleria{
+    width: 30%;
+    margin: 1rem;
+}
+.cardDatosGale{
+    width: 25%;
+    height: 9rem;
+    margin: 1rem;
+    float: left;
+}
+
+@media only screen and (max-width: 800px) {
+    .cardDatosGale{
+        width: -webkit-fill-available;
+        margin-right: 1rem;
+    }
+}

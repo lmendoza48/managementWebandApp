@@ -1,0 +1,27 @@
+<section>
+    <div>
+       <mat-form-field class="searchGaleria">
+           <input matInput placeholder="Buscar" [(ngModel)] = "filterGalery">
+        </mat-form-field>
+        <button mat-raised-button color="accent"  class ="btnSearch" (click) ="openPopUpGalery()" >Nuevo Taller</button>
+    </div>
+    <div class="cardGaleriaAll">
+         <mat-card class="cardDatosGale" *ngFor = "let gls of listGalery | filter:filterGalery">
+                 <mat-card-header>
+                     <mat-card-title>{{gls.titleGal}}</mat-card-title>
+                 </mat-card-header>
+                 <mat-card-content>
+                    <p style="text-align: right;" >
+                        {{gls.dateSave | date:'fullDate'}}
+                    </p>
+                 </mat-card-content>
+                 <mat-card-actions align="right">
+                      <button mat-button (click) = onDeleteData(gls) >Eliminar</button>
+                      <button mat-button (click) = "updateDataDialog(gls)">Actualizar</button>
+                 </mat-card-actions>
+         </mat-card>
+    </div>
+ </section> 
+  
+ 
+ 

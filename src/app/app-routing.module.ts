@@ -6,6 +6,7 @@ import { EmailMngComponent } from './pages/email-mng/email-mng.component';
 import { BackupdataComponent } from './pages/backupdata/backupdata.component';
 import { InformationAPPComponent } from './pages/information-app/information-app.component';
 import { EmailWebComponent } from './pages/email-web/email-web.component';
+import { GalreiaIMGComponent } from './pages/galreia-img/galreia-img.component';
 
 
 const routes: Routes = [
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path:'backup',
     component:BackupdataComponent
+  },
+  {
+    path:'galeria',
+    component:GalreiaIMGComponent
   }
 ];
 

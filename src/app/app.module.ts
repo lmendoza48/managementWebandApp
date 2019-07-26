@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +25,9 @@ import { PopEmailWebComponent } from './pages/email-web/pop-email-web/pop-email-
 import { PopAppComponent } from './pages/information-app/pop-app/pop-app.component';
 import { MngContactappService } from './services/mng-contactapp.service';
 import { AppInformationService } from './services/app.information.service';
+import { GalreiaIMGComponent } from './pages/galreia-img/galreia-img.component';
+import { PopGaleriaComponent } from './pages/galreia-img/pop-galeria/pop-galeria.component';
+import { GaleriaService } from './services/galeria.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,9 @@ import { AppInformationService } from './services/app.information.service';
     PopEmailComponent,
     EmailWebComponent,
     PopEmailWebComponent,
-    PopAppComponent
+    PopAppComponent,
+    GalreiaIMGComponent,
+    PopGaleriaComponent
   ],
   imports: [
     BrowserModule,
@@ -49,19 +54,22 @@ import { AppInformationService } from './services/app.information.service';
     BrowserAnimationsModule ,
     MaterialComponent,
     FormsModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    ReactiveFormsModule
   ],
   entryComponents:[
     PopWebComponent,
     PopEmailComponent,
     PopAppComponent,
-    PopEmailWebComponent
+    PopEmailWebComponent,
+    PopGaleriaComponent
   ],
   providers: [
     ContactServiceWeb,
     WebinformationService,
     MngContactappService,
-    AppInformationService
+    AppInformationService,
+    GaleriaService
   ],
   bootstrap: [AppComponent]
 })

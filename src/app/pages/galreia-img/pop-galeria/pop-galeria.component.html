@@ -1,0 +1,44 @@
+<section>
+  <div class="btnCloseGale">
+      <button mat-icon-button color="accent" (click)="closePopUp()">
+          <mat-icon>clear</mat-icon>
+      </button>
+  </div>
+  <form [formGroup]="productForm" class="formGaleria">
+
+    <input type="hidden" formControlName="$key">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="titulo taller" formControlName="title">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Imagen Principal" formControlName="imgPresent" >
+    </mat-form-field>
+    <div formArrayName="urlImgCarru">
+      <div *ngFor="let item of urlImgCarrusel.controls; let pointIndex=index" [formGroupName]="pointIndex" >
+          <mat-form-field class="urlGaleria">
+              <input matInput placeholder="Url galeria imagen" formControlName="point">
+          </mat-form-field>
+          <button mat-icon-button aria-label="delete"  (click)="deleteGaleryImg(pointIndex)">
+              <i class="material-icons">
+                clear
+                </i>
+          </button>
+      </div>
+    </div> 
+    <div >
+        <button mat-button color="accent" (click)="addGaleryImg()"><i class="material-icons">add</i> 
+          Agregar Otra Imagen
+        </button>
+    </div>
+    <div class="saveBtn">
+       <button mat-raised-button color="accent"(click)="getSaveGaleriaAndUpdate(productForm)" > Guardar </button>
+    </div>
+  </form>
+</section>
+
+
+
+
+
+
