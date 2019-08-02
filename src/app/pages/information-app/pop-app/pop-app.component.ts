@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { AppInformationService } from 'src/app/services/app.information.service';
 import { NgForm } from '@angular/forms';
-import { MatDialogRef } from '@angular/material';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-pop-app',
@@ -10,7 +10,8 @@ import { MatDialogRef } from '@angular/material';
 })
 export class PopAppComponent implements OnInit {
 
-  constructor(public servicesAPP : AppInformationService, public dialogRef :  MatDialogRef<PopAppComponent>) { }
+  constructor(public servicesAPP : AppInformationService, 
+              public dialogRef :  MatDialogRef<PopAppComponent>) { }
 
   ngOnInit() {
     this.servicesAPP.getConectListApp();

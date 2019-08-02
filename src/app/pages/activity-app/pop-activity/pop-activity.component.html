@@ -1,0 +1,42 @@
+<section>
+    <div class="btnCloseGale">
+        <button mat-icon-button color="accent" (click)="closeModelAct()">
+            <mat-icon>clear</mat-icon>
+        </button>
+    </div>
+    <form [formGroup]="acttForm" class="formActt">
+  
+      <input type="hidden" formControlName="$key">
+
+      <mat-form-field class="acttcModel">
+        <input matInput placeholder="titulo actividad" formControlName="titleAct">
+      </mat-form-field>
+
+      <div formArrayName="imgSlides">
+        <div *ngFor="let item of urlImgSlide.controls; let pointIndex=index" [formGroupName]="pointIndex" >
+            <mat-form-field class="slideImgMo">
+                <input matInput placeholder="Url imagen Slide" formControlName="img">
+            </mat-form-field>
+            <button mat-icon-button aria-label="delete"  (click)="deleteSlideImg(pointIndex)">
+                <i class="material-icons">
+                  clear
+                  </i>
+            </button>
+        </div>
+      </div> 
+      <div >
+          <button mat-button color="accent" (click)="addSlideImg()"><i class="material-icons">add</i> 
+            Agregar Otra Imagen
+          </button>
+      </div>
+      <mat-divider style="margin: 1rem;"></mat-divider>
+      <mat-form-field class="acttcModel">
+        <textarea matInput placeholder="Contenido de la actividad" formControlName="contentAct" rows="6"></textarea>
+       </mat-form-field>
+
+      <div class="saveBtn">
+         <button mat-raised-button color="accent"(click)="getSaveAndUpdateSlide(acttForm)" > Guardar </button>
+      </div>
+    </form>
+  </section>
+  

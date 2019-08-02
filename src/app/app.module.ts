@@ -28,6 +28,8 @@ import { AppInformationService } from './services/app.information.service';
 import { GalreiaIMGComponent } from './pages/galreia-img/galreia-img.component';
 import { PopGaleriaComponent } from './pages/galreia-img/pop-galeria/pop-galeria.component';
 import { GaleriaService } from './services/galeria.service';
+import { ActivityAppComponent } from './pages/activity-app/activity-app.component';
+import { PopActivityComponent } from './pages/activity-app/pop-activity/pop-activity.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { GaleriaService } from './services/galeria.service';
     PopEmailWebComponent,
     PopAppComponent,
     GalreiaIMGComponent,
-    PopGaleriaComponent
+    PopGaleriaComponent,
+    ActivityAppComponent,
+    PopActivityComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +66,8 @@ import { GaleriaService } from './services/galeria.service';
     PopEmailComponent,
     PopAppComponent,
     PopEmailWebComponent,
-    PopGaleriaComponent
+    PopGaleriaComponent,
+    PopActivityComponent    
   ],
   providers: [
     ContactServiceWeb,

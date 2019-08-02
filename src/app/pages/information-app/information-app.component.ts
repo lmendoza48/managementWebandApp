@@ -3,6 +3,8 @@ import { AppInformationService } from 'src/app/services/app.information.service'
 import { MatDialog, MatDialogRef } from '@angular/material';
 import { PopAppComponent } from './pop-app/pop-app.component';
 import { AppModels } from 'src/app/models/app.models';
+import { ActivityAppService } from 'src/app/services/activity-app.service';
+import { ActivityModel } from 'src/app/models/activity.model';
 
 @Component({
   selector: 'app-information-app',
@@ -15,9 +17,15 @@ export class InformationAPPComponent implements OnInit {
   appList : AppModels[]; 
   filterAPP : string = '';
 
-  constructor(public servicesAPP : AppInformationService, public dialog : MatDialog) { }
+  constructor(public servicesAPP : AppInformationService,
+              public dialog : MatDialog) { }
 
   ngOnInit() {
+   this.getDataInformationApp();
+  }
+  
+
+  getDataInformationApp(){
     let appH = this.servicesAPP.getConectListApp();
     appH.snapshotChanges().subscribe( mobil => {
        this.appList = [];
@@ -28,7 +36,7 @@ export class InformationAPPComponent implements OnInit {
        });
     });
   }
-  
+
   openDialogNewAPP(){
     this.dialogRef = this.dialog.open(PopAppComponent,{
       width: '800px',

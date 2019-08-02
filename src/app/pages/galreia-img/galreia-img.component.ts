@@ -31,10 +31,11 @@ export class GalreiaIMGComponent implements OnInit {
     });
   }
 
-  openPopUpGalery(){
+  openPopUpGalery( item? :GaleryModel){
     this.dialogRef = this.dialog.open(PopGaleriaComponent,{
       width: '600px',
       height: '35rem',
+      data : item != null ? item : null,
     });
     this.dialogRef.afterClosed().subscribe(result => {
            this.servcs.dbGaleria = new GaleryModel();
@@ -42,11 +43,7 @@ export class GalreiaIMGComponent implements OnInit {
   }
 
   updateDataDialog(item : GaleryModel){
-     this.dialogRef = this.dialog.open(PopGaleriaComponent,{
-      width: '600px',
-      height: '35rem',
-      data : item
-     })
+     this.openPopUpGalery(item);
   }
 
   onDeleteData(item : GaleryModel){

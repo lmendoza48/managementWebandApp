@@ -18,7 +18,12 @@ export class PopGaleriaComponent implements OnInit {
               public servGle : GaleriaService,
               @Inject(MAT_DIALOG_DATA) public data: GaleryModel) { }
 
+              
   ngOnInit() {
+    this.getInfoGaleria();
+  }
+
+  getInfoGaleria(){
     if(this.data == null){
       this.productForm = this.fb.group({
         $key : null,
@@ -39,7 +44,6 @@ export class PopGaleriaComponent implements OnInit {
          }
       );
     }
-
   }
    
   closePopUp( form? : FormGroup){

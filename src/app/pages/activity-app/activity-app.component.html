@@ -1,0 +1,23 @@
+<div>
+    <mat-form-field class="searchActt">
+        <input matInput placeholder="Buscar" [(ngModel)] = "filterAct">
+    </mat-form-field>
+    <button mat-raised-button color="accent"  class ="btnSearch" (click) ="openDialogActt()" >Nueva Actividad</button>
+  </div>
+      <div class="cardAPPall">
+          <mat-card class="cardActtSt" *ngFor = "let item of actList | filter:filterAct">
+               <mat-card-header>
+                   <mat-card-title>{{item.titleAct}}</mat-card-title>
+                   <mat-card-subtitle> {{item.dateSave | date:'short'}}</mat-card-subtitle>
+               </mat-card-header>
+               <mat-card-content>
+                   <p style="text-align: right;" >
+                       {{item.contentAct | slice:0:100 }}...
+                   </p>
+               </mat-card-content>
+                    <mat-card-actions align="right">
+                        <button mat-button (click) = "onDeleteActt(item)" >Eliminar</button>
+                        <button mat-button (click) = "updateDialogActt(item)">Actualizar</button>
+                    </mat-card-actions>
+           </mat-card>
+      </div>

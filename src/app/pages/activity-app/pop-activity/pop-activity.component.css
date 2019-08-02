@@ -1,0 +1,15 @@
+.formActt {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+.acttcModel{
+  width: 100%;
+}
+.slideImgMo{
+    width: 50%;
+}
+.btnCloseGale,.saveBtn{
+    text-align: right;
+}
+  

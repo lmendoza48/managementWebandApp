@@ -1,28 +1,33 @@
-<section>
-    <div>
-       <mat-form-field class="searchAPP">
-           <input matInput placeholder="Buscar" [(ngModel)] = "filterAPP">
-        </mat-form-field>
-        <button mat-raised-button color="accent"  class ="btnSearch" (click) ="openDialogNewAPP()" >Nuevo APP</button>
-    </div>
-    <div class="cardAPPall">
-         <mat-card class="cardAppStyle" *ngFor = "let item of appList | filter:filterAPP">
-                 <mat-card-header>
-                     <mat-card-title>{{item.titleApp}}</mat-card-title>
-                     <mat-card-subtitle> {{item.dayApp | date:'short'}}</mat-card-subtitle>
-                 </mat-card-header>
-                 <mat-card-content>
-                    <p style="text-align: right;" >
-                        Mes:{{item.monthApp }}  
-                    </p>
-                 </mat-card-content>
-                 <mat-card-actions align="right">
-                      <button mat-button (click) = onDeleteAPP(item) >Eliminar</button>
-                      <button mat-button (click) = "updateDataDialogAPP(item)">Actualizar</button>
-                 </mat-card-actions>
-         </mat-card>
-    </div>
- </section> 
+<mat-tab-group>
+    <mat-tab label="Informacion App">
+        <div>
+            <mat-form-field class="searchAPP">
+                <input matInput placeholder="Buscar" [(ngModel)] = "filterAPP">
+             </mat-form-field>
+             <button mat-raised-button color="accent"  class ="btnSearch" (click) ="openDialogNewAPP()" >Nuevo tema App</button>
+         </div>
+         <div class="cardAPPall">
+              <mat-card class="cardAppStyle" *ngFor = "let item of appList | filter:filterAPP">
+                      <mat-card-header>
+                          <mat-card-title>{{item.titleApp}}</mat-card-title>
+                          <mat-card-subtitle> {{item.dayApp | date:'short'}}</mat-card-subtitle>
+                      </mat-card-header>
+                      <mat-card-content>
+                         <p style="text-align: right;" >
+                             Mes:{{item.monthApp }}  
+                         </p>
+                      </mat-card-content>
+                      <mat-card-actions align="right">
+                           <button mat-button (click) = onDeleteAPP(item) >Eliminar</button>
+                           <button mat-button (click) = "updateDataDialogAPP(item)">Actualizar</button>
+                      </mat-card-actions>
+              </mat-card>
+         </div>
+    </mat-tab>
+    <mat-tab label="Actividad App">
+         <app-activity-app></app-activity-app>
+    </mat-tab>
+</mat-tab-group>
   
  
  
