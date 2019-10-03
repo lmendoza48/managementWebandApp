@@ -21,27 +21,37 @@ export class AppInformationService {
   saveDataApp(appData : AppModels){
     appData.dayApp = Date.now();
     this.dbConectList.push({
-       titleApp : appData.titleApp,
-       urlImgApp : appData.urlImgApp,
-       contentApp : appData.contentApp,
-       dayApp :  appData.dayApp,
-       monthApp : appData.monthApp,
+      titleTab1 : appData.titleTab1,
+      urlTab1 : appData.urlTab1,
+      contentTab1 : appData.contentTab1,
+      titleTab2 : appData.titleTab2,
+      urlTab2 : appData.urlTab2,
+      contentTab2 : appData.contentTab2,
+      titleTab3 : appData.titleTab3,
+      urlTab3 : appData.urlTab3,
+      contentTab3 : appData.contentTab3,
+      dayApp :  appData.dayApp
     })
   }
 
   updateDataApp(updData : AppModels){
      updData.dayApp = Date.now();
      this.dbConectList.update(updData.$key,{
-        titleApp : updData.titleApp,
-        urlImgApp : updData.urlImgApp,
-        contentApp : updData.contentApp,
-        dayApp :  updData.dayApp,
-        monthApp : updData.monthApp,
+      titleTab1 : updData.titleTab1,
+      urlTab1 : updData.urlTab1,
+      contentTab1 : updData.contentTab1,
+      titleTab2 : updData.titleTab2,
+      urlTab2 : updData.urlTab2,
+      contentTab2 : updData.contentTab2,
+      titleTab3 : updData.titleTab3,
+      urlTab3 : updData.urlTab3,
+      contentTab3 : updData.contentTab3,
+       dayApp :  updData.dayApp
      });
   }
 
-  deleteDataApp(){
-
+  deleteDataApp(key : string){
+    this.dbConectList.remove(key);
   }
 
 }

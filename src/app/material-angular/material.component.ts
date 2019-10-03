@@ -18,7 +18,8 @@ import { MatToolbarModule,
          MatMenuModule,
          MatCardModule,
          MatBadgeModule,
-         MatTabsModule
+         MatTabsModule,
+         MatStepperModule
         }
  from '@angular/material';
 
@@ -42,7 +43,8 @@ import { MatToolbarModule,
             MatBadgeModule,
             LayoutModule,
             MatTabsModule,
-            MatSnackBarModule
+            MatSnackBarModule,
+            MatStepperModule
           ],
  exports: [MatButtonModule, 
            MatCheckboxModule,
@@ -63,7 +65,8 @@ import { MatToolbarModule,
            MatBadgeModule,
            LayoutModule,
            MatTabsModule,
-           MatSnackBarModule
+           MatSnackBarModule,
+           MatStepperModule
           ],
 })
 export class MaterialComponent { }

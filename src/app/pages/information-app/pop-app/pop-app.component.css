@@ -8,3 +8,11 @@
 .btnPopUpApp,.closeDialogAPP{
     text-align: right;
 }
+.ready-done, .ready-text{
+   text-align: center;
+   margin-top: 2rem;
+} 
+.ready-button{
+   text-align: right;
+   margin-top: 5rem;
+}

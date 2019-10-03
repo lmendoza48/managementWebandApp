@@ -1,30 +1,72 @@
-<section>
-    <div class="closeDialogAPP">
-        <button mat-button color="accent" (click) = "onCloseDialogApp()">X</button>
-    </div>
-   <form #formAPP="ngForm" (ngSubmit) = "onSaveDataAPPAndupdate(formAPP)">
-        <div class="formAPPDialog"> 
-            <input type="hidden" name="$key" #$key="ngModel" [(ngModel)] = "servicesAPP.dataApp.$key" >
+<div class="closeDialogAPP">
+    <button mat-button color="accent" (click) = "onCloseDialogApp()">X</button>
+</div>
+<mat-horizontal-stepper linear #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+        <form novalidate [formGroup]="firstFormGroup" class="formAPPDialog">
+            <ng-template matStepLabel>Temas Tab 1</ng-template>
+            <input type="hidden" name="$key" formControlName="$key">
             <mat-form-field>
-            <input matInput placeholder="Titulo" type="text" name="titleApp" #titleApp="ngModel" [(ngModel)]="servicesAPP.dataApp.titleApp">
-            </mat-form-field> 
-            <mat-form-field>
-            <input matInput placeholder="Url Imagen" type="text" name="urlImgApp"  #urlImgApp="ngModel" [(ngModel)]="servicesAPP.dataApp.urlImgApp">
-            </mat-form-field> 
-            <mat-form-field>
-               <mat-label>Año del Tema</mat-label>
-                <mat-select name="monthApp" #monthApp="ngModel"  [(ngModel)] = "servicesAPP.dataApp.monthApp" >
-                  <mat-option value="primer"> 1° año</mat-option>
-                  <mat-option value="segundo"> 2° año</mat-option>
-                  <mat-option value="tercer"> 3° año</mat-option>
-                </mat-select>
+            <input matInput placeholder="Titulo" formControlName="titleTab1" required>
             </mat-form-field>
             <mat-form-field>
-            <textarea matInput placeholder="Contenido" type="text" name="contentApp"  #contentApp="ngModel"  [(ngModel)]="servicesAPP.dataApp.contentApp" rows="10" required></textarea>
+                <input matInput placeholder="Url Imagen 1" formControlName="urlTab1" required>
+            </mat-form-field> 
+            <mat-form-field>
+                <textarea matInput placeholder="Contenido" formControlName="contentTab1" rows="7" required></textarea>
             </mat-form-field>
             <div class="btnPopUpApp">
-                <button mat-stroked-button color="accent" type="submit" [disabled]="!formAPP.valid">Guardar</button>
+                 <button mat-button matStepperNext type="submit" [disabled]="firstFormGroup.invalid" >Siguiente</button>
             </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+      <form novalidate [formGroup]="secondFormGroup" class="formAPPDialog">
+        <ng-template matStepLabel>Temas Tab 2</ng-template>
+        <mat-form-field>
+             <input matInput placeholder="Titulo" formControlName="titleTab2" required>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Url Imagen 2" formControlName="urlTab2" required>
+        </mat-form-field> 
+        <mat-form-field>
+            <textarea matInput placeholder="Contenido 2" formControlName="contentTab2" rows="7" required></textarea>
+        </mat-form-field>
+        <div class="btnPopUpApp">
+          <button mat-button matStepperPrevious>Volver</button>
+          <button mat-button matStepperNext [disabled]="secondFormGroup.invalid">Siguiente</button>
         </div>
-    </form>       
-</section>   
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Tema Tab 3</ng-template>
+      <form novalidate (ngSubmit)="onSubmit()" [formGroup]="thirdFormGroup" class="formAPPDialog">
+        <ng-template matStepLabel>Temas Tab 2</ng-template>
+        <mat-form-field>
+                <input matInput placeholder="Titulo" formControlName="titleTab3" required>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Url Imagen 3" formControlName="urlTab3" required>
+        </mat-form-field> 
+        <mat-form-field>
+            <textarea matInput placeholder="Contenido 3" formControlName="contentTab3" rows="7" required></textarea>
+        </mat-form-field>
+        <div class="btnPopUpApp">
+            <button mat-button matStepperPrevious>Volver</button>
+            <button mat-button matStepperNext [disabled]="thirdFormGroup.invalid">Guardar</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Listo</ng-template>
+        <div class="ready-done">
+            <img src="https://img.icons8.com/cotton/120/000000/completed-task.png">
+        </div>
+        <div class="ready-text">
+                Se cargaron los datos con exito!
+        </div>
+        <div class="ready-button">
+            <button mat-button color="accent" (click) = "onCloseDialogApp()">Cerrar</button>
+        </div>
+    </mat-step>
+  </mat-horizontal-stepper>

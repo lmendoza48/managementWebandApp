@@ -30,6 +30,10 @@ import { PopGaleriaComponent } from './pages/galreia-img/pop-galeria/pop-galeria
 import { GaleriaService } from './services/galeria.service';
 import { ActivityAppComponent } from './pages/activity-app/activity-app.component';
 import { PopActivityComponent } from './pages/activity-app/pop-activity/pop-activity.component';
+import { MessaginPushService } from './services/messagin-push.service';
+import { AsyncPipe } from '@angular/common';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireMessagingModule } from '@angular/fire/messaging';
 
 @NgModule({
   declarations: [
@@ -55,6 +59,8 @@ import { PopActivityComponent } from './pages/activity-app/pop-activity/pop-acti
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.configFirebase),
     AngularFireDatabaseModule,
+    AngularFireAuthModule,
+    AngularFireMessagingModule,
     BrowserAnimationsModule ,
     MaterialComponent,
     FormsModule,
@@ -74,7 +80,9 @@ import { PopActivityComponent } from './pages/activity-app/pop-activity/pop-acti
     WebinformationService,
     MngContactappService,
     AppInformationService,
-    GaleriaService
+    GaleriaService,
+    MessaginPushService,
+    AsyncPipe
   ],
   bootstrap: [AppComponent]
 })

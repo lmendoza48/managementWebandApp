@@ -9,12 +9,12 @@
          <div class="cardAPPall">
               <mat-card class="cardAppStyle" *ngFor = "let item of appList | filter:filterAPP">
                       <mat-card-header>
-                          <mat-card-title>{{item.titleApp}}</mat-card-title>
+                          <mat-card-title>{{item.titleTab1}}</mat-card-title>
                           <mat-card-subtitle> {{item.dayApp | date:'short'}}</mat-card-subtitle>
                       </mat-card-header>
                       <mat-card-content>
                          <p style="text-align: right;" >
-                             Mes:{{item.monthApp }}  
+                            {{item.contentTab1 | slice:0:15 }}...  
                          </p>
                       </mat-card-content>
                       <mat-card-actions align="right">
