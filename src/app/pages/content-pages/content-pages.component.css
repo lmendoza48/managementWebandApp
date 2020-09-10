@@ -1,0 +1,8 @@
+.sidenavStyle {
+    width: -webkit-fill-available;
+    height: 100%;
+}
+.endAligButton{
+  width: -webkit-fill-available;
+  text-align: end;
+}  

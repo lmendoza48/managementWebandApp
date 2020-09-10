@@ -1,0 +1,24 @@
+.cardWebProdcts{
+    width: 25%;
+    height: 9rem;
+    margin: 1rem;
+    float: left;
+}
+.searchCompoProducts{
+    width: 30%;
+    margin: 1rem;
+}
+.ordrs-card{
+    width: 30%;
+    margin: 2rem;
+    display: inline-block;
+}
+.contentOrds{
+    margin-top: 1rem;
+}
+@media only screen and (max-width: 800px) {
+    .cardWebProdcts{
+        width: -webkit-fill-available;
+        margin-right: 1rem;
+    }
+}

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { InformationWebComponent } from './pages/information-web/information-web.component';
@@ -7,13 +7,19 @@ import { BackupdataComponent } from './pages/backupdata/backupdata.component';
 import { InformationAPPComponent } from './pages/information-app/information-app.component';
 import { EmailWebComponent } from './pages/email-web/email-web.component';
 import { GalreiaIMGComponent } from './pages/galreia-img/galreia-img.component';
+import { ProductsComponent } from './pages/products/products.component';
+import { LoginComponent } from './pages/login/login.component';
 
 
 const routes: Routes = [
   {
-   path:'',
-   component:HomeComponent
+    path: '',
+    component : LoginComponent
   },
+  {
+   path:'home',
+   component:HomeComponent
+  },  
   {
     path:'informationsWEB',
     component: InformationWebComponent
@@ -37,6 +43,10 @@ const routes: Routes = [
   {
     path:'galeria',
     component:GalreiaIMGComponent
+  },
+  {
+    path: 'products',
+    component: ProductsComponent
   }
 ];
 

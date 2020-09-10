@@ -1,7 +1,4 @@
 import { Component, ViewChild } from '@angular/core';
-import { MatSidenav } from '@angular/material/sidenav';
-import { Router } from '@angular/router';
-
 
 @Component({
   selector: 'app-root',
@@ -10,13 +7,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'mgnchildrenapps';
-  @ViewChild('sidenav', {static: false}) sidenav: MatSidenav;
 
-  constructor(public router : Router) {}
+  constructor() {}
 
-  onClickData( flag? : string){
-    this.sidenav.close();
-    if(flag != undefined )
-       this.router.navigate(['/'+flag]);
-  }
 }

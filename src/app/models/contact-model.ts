@@ -1,8 +1,8 @@
 export class ContactModel {
     $key : string;
-    title : string;
-    alltext : string;
-    mail : string;
+    assunt : string;
+    comment : string;
+    email : string;
     day : number;
     name : string;
     answer: string;

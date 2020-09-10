@@ -1,0 +1,21 @@
+.container-login{
+    text-align: -webkit-center;
+    padding-top: 5rem;
+}
+.card-group{
+    width: 50%;
+}
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+.example-full-width {
+width: 100%;
+}
+.fogetpass{
+    text-align: start;
+}
+.submitLog{
+    text-align: end;
+}

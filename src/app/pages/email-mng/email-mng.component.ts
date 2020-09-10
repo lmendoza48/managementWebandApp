@@ -39,9 +39,9 @@ export class EmailMngComponent implements OnInit {
   }
 
   openViewMsg(item : ContactModel, viewFlag? : boolean){
-    sessionStorage.setItem('title', item.title);
-    sessionStorage.setItem('comment', item.alltext);
-    sessionStorage.setItem('email', item.mail);
+    sessionStorage.setItem('title', item.assunt);
+    sessionStorage.setItem('comment', item.comment);
+    sessionStorage.setItem('email', item.email);
     sessionStorage.setItem('daySend', item.day.toString());
     sessionStorage.setItem('key', item.$key);
     if(!viewFlag){

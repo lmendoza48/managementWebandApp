@@ -2,10 +2,10 @@
     <mat-tab label="Sin responder"> 
          <mat-card class="cardMsgContactWEB" *ngFor="let cct of listWebCct">
             <mat-card-title>
-                {{cct.title}}
+                {{cct.assunt}}
             </mat-card-title>
             <mat-card-content>
-                  {{cct.alltext | slice:0:100}}...
+                  {{cct.comment | slice:0:100}}...
             </mat-card-content>
             <mat-card-actions align="right">
                 <button mat-button color="accent" (click) = "openViewMsgWeb(cct,true)">Ver</button>
@@ -15,10 +15,10 @@
     <mat-tab label="Respondidos">
         <mat-card class="cardMsgContactWEB" *ngFor="let cview of readWebcct">
             <mat-card-title>
-                 {{cview.title}}
+                 {{cview.assunt}}
             </mat-card-title>
             <mat-card-content>
-                   {{cview.alltext | slice:0:100}}...
+                   {{cview.comment | slice:0:100}}...
             </mat-card-content>
             <mat-card-actions align="right">
                 <button mat-button color="accent" (click) = "openViewMsgWeb(cview,false)">Ver</button>

@@ -8,6 +8,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { InformationWebComponent } from './pages/information-web/information-web.component';
 import { InformationAPPComponent } from './pages/information-app/information-app.component';
 import { EmailMngComponent } from './pages/email-mng/email-mng.component';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -34,6 +35,12 @@ import { MessaginPushService } from './services/messagin-push.service';
 import { AsyncPipe } from '@angular/common';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireMessagingModule } from '@angular/fire/messaging';
+import { ProductsComponent } from './pages/products/products.component';
+import { ProductsService } from './services/products.service';
+import { DialogNewProductsComponent } from './pages/products/dialog-new-products/dialog-new-products.component';
+import { LoginComponent } from './pages/login/login.component';
+import { LoginService } from './services/login.service';
+import { ContentPagesComponent } from './pages/content-pages/content-pages.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +59,11 @@ import { AngularFireMessagingModule } from '@angular/fire/messaging';
     GalreiaIMGComponent,
     PopGaleriaComponent,
     ActivityAppComponent,
-    PopActivityComponent
+    PopActivityComponent,
+    ProductsComponent,
+    DialogNewProductsComponent,
+    LoginComponent,
+    ContentPagesComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +76,8 @@ import { AngularFireMessagingModule } from '@angular/fire/messaging';
     MaterialComponent,
     FormsModule,
     Ng2SearchPipeModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFirestoreModule
   ],
   entryComponents:[
     PopWebComponent,
@@ -73,7 +85,8 @@ import { AngularFireMessagingModule } from '@angular/fire/messaging';
     PopAppComponent,
     PopEmailWebComponent,
     PopGaleriaComponent,
-    PopActivityComponent    
+    PopActivityComponent,
+    DialogNewProductsComponent   
   ],
   providers: [
     ContactServiceWeb,
@@ -82,7 +95,9 @@ import { AngularFireMessagingModule } from '@angular/fire/messaging';
     AppInformationService,
     GaleriaService,
     MessaginPushService,
-    AsyncPipe
+    AsyncPipe,
+    ProductsService,
+    LoginService
   ],
   bootstrap: [AppComponent]
 })

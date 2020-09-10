@@ -1,0 +1,51 @@
+<section>
+    <div class="closeDialogProducts">
+        <button mat-button color="accent" (click) = "onCloseDialog()">X</button>
+    </div>
+   <form [formGroup]="producstChagerd" (ngSubmit) = "onSaveDataWebAndupdateProducts()">
+        <div class="formWebDialogProd"> 
+            <input type="hidden" name="$key" formControlName="$key">
+            <mat-form-field>
+                <input matInput placeholder="Nombre" type="text" name="name" formControlName="name">
+            </mat-form-field> 
+            <mat-form-field>
+                <input matInput placeholder="Categoria" type="text" name="category" formControlName="category">
+            </mat-form-field> 
+            <mat-form-field>
+                <input matInput placeholder="Precio" type="number" name="price" formControlName="price">
+            </mat-form-field> 
+            <mat-form-field>
+                <input matInput placeholder="Url Imagen" type="text" name="img" formControlName="img">
+            </mat-form-field> 
+            <mat-form-field>
+                <input matInput placeholder="Cantidad" type="number" name="cantidad" formControlName="cantidad">
+            </mat-form-field> 
+            <mat-form-field>
+                <textarea matInput placeholder="Descripción" type="text" name="description" formControlName="description" rows="5" required></textarea>
+            </mat-form-field>
+
+            <div formArrayName="imgSlides">
+                <div *ngFor="let item of urlImgSlide.controls; let pointIndex=index" [formGroupName]="pointIndex" >
+                    <mat-form-field class="slideImgMo">
+                        <input matInput placeholder="Url imagen Slide" formControlName="img">
+                    </mat-form-field>
+                    <button mat-icon-button aria-label="delete" type="button" (click)="deleteSlideImg(pointIndex)">
+                        <i class="material-icons">
+                          clear
+                          </i>
+                    </button>
+                </div>
+            </div> 
+            <div >
+                <button mat-button type="button" color="accent" (click)="addSlideImg()"><i class="material-icons">add</i> 
+                  Agregar Otra Imagen
+                </button>
+            </div>
+            <div class="btnPopUpProdcts">
+                <button mat-stroked-button color="accent" type="submit" [disabled]="!producstChagerd.valid">Guardar</button>
+            </div>
+        </div>
+    </form>       
+</section>   
+
+

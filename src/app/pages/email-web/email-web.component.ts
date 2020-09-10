@@ -34,9 +34,9 @@ export class EmailWebComponent implements OnInit {
   }
 
   openViewMsgWeb(item : ContactModel, flagModel : boolean){
-    sessionStorage.setItem('titleWeb', item.title);
-    sessionStorage.setItem('commentWeb', item.alltext);
-    sessionStorage.setItem('emailWeb', item.mail);
+    sessionStorage.setItem('titleWeb', item.assunt);
+    sessionStorage.setItem('commentWeb', item.comment);
+    sessionStorage.setItem('emailWeb', item.email);
     sessionStorage.setItem('daySendWeb', item.day.toString());
     this.dialogRef = this.dialog.open(PopEmailWebComponent,{
       width: '800px',

@@ -1,0 +1,31 @@
+<div class="container-login">
+    <mat-card class="card-group"> 
+        <form [formGroup]="loginFormGroup" (ngSubmit)="formLogin()" class="example-form" *ngIf="flagPass">
+            <mat-form-field appearance="outline" class="example-full-width">
+              <mat-label>Email</mat-label>
+              <input matInput type="email" placeholder="Ingrese su email" formControlName="emailLogin" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+            </mat-form-field>
+          
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>Clave</mat-label>
+                <input matInput type="password" placeholder="ingrese su clave" formControlName="passLogin" >
+            </mat-form-field>
+            <div class="fogetpass">
+                <button mat-button color="accent" (click)="forgetPassBtn()">¿Olvido su contraseña?</button>
+            </div>
+            <div class="submitLog">
+                <button mat-raised-button color="accent" type="submit" [disabled]="!loginFormGroup.valid">Iniciar</button>
+            </div>
+          </form>
+
+          <form [formGroup]="ressetPass" (ngSubmit)="loginResetPass()" class="example-form" *ngIf="!flagPass">
+            <mat-form-field appearance="outline" class="example-full-width">
+              <mat-label>Email</mat-label>
+              <input matInput type="email" placeholder="Ingrese su email" formControlName="emailForget" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+            </mat-form-field>
+            <div class="submitLog">
+                <button mat-raised-button color="accent" type="submit" [disabled]="!ressetPass.valid">Enviar</button>
+            </div>
+          </form>
+    </mat-card>
+</div>
