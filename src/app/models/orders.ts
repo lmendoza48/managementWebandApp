@@ -10,4 +10,5 @@ export class Orders {
     productsBuy: ProductsBuy[];
     totalPay: number;
     status: string;
+    date : number;
 }

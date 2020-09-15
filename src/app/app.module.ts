@@ -10,6 +10,8 @@ import { InformationAPPComponent } from './pages/information-app/information-app
 import { EmailMngComponent } from './pages/email-mng/email-mng.component';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
+import { NgpSortModule } from "ngp-sort-pipe";
+
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
@@ -77,7 +79,8 @@ import { ContentPagesComponent } from './pages/content-pages/content-pages.compo
     FormsModule,
     Ng2SearchPipeModule,
     ReactiveFormsModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    NgpSortModule
   ],
   entryComponents:[
     PopWebComponent,

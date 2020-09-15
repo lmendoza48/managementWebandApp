@@ -11,11 +11,20 @@
 .ordrs-card{
     width: 30%;
     margin: 2rem;
-    display: inline-block;
+    float: left;
 }
 .contentOrds{
     margin-top: 1rem;
 }
+
+.conteListOrds_1{
+    height: 11rem;
+    overflow: auto;
+}
+.addressStreet{
+    margin-bottom: 25px;
+}
+
 @media only screen and (max-width: 800px) {
     .cardWebProdcts{
         width: -webkit-fill-available;

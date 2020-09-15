@@ -48,7 +48,8 @@ export class ProductsComponent implements OnInit {
             order: e.payload.doc.data()['order'] as number,
             productsData: JSON.parse(e.payload.doc.data()['totalOrd']),
             totalPay: e.payload.doc.data()['totalBuy'] as number,
-            status: e.payload.doc.data()['status'] as string
+            status: e.payload.doc.data()['status'] as string,
+            date : e.payload.doc.data()['date'] as number,
           };
         })
         dats.forEach( od => {
