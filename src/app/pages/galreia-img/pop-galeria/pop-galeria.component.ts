@@ -16,7 +16,9 @@ export class PopGaleriaComponent implements OnInit {
   constructor(private fb: FormBuilder, 
               public dialogRef : MatDialogRef<PopGaleriaComponent>,
               public servGle : GaleriaService,
-              @Inject(MAT_DIALOG_DATA) public data: GaleryModel) { }
+              @Inject(MAT_DIALOG_DATA) public data: GaleryModel) {
+                dialogRef.disableClose = true;
+               }
 
               
   ngOnInit() {

@@ -24,7 +24,7 @@ export class ProductsService {
     this.dbConectListProducts.push({
       name : item.name,
       cantidad : item.cantidad,
-      category : item.category,
+      category : item.category.trim(),
       dateCharged : item.dateCharged,
       description : item.description,
       img : item.img,
@@ -38,7 +38,7 @@ export class ProductsService {
      this.dbConectListProducts.update(item.$key,{
       name : item.name,
       cantidad : item.cantidad,
-      category : item.category,
+      category : item.category.trim(),
       dateCharged : item.dateCharged,
       description : item.description,
       img : item.img,

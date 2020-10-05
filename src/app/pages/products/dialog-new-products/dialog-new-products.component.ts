@@ -17,7 +17,9 @@ export class DialogNewProductsComponent implements OnInit {
   constructor(public dialogRef : MatDialogRef<DialogNewProductsComponent>, 
     public servics : ProductsService,
     public fbproducst :  FormBuilder,
-    @Inject(MAT_DIALOG_DATA) public dataProducts: Products) {}
+    @Inject(MAT_DIALOG_DATA) public dataProducts: Products) {
+      dialogRef.disableClose = true;
+    }
 
 ngOnInit() {
   this.servics.getConectListAppProducts();

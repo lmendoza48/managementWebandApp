@@ -11,7 +11,7 @@
                 <input matInput type="password" placeholder="ingrese su clave" formControlName="passLogin" >
             </mat-form-field>
             <div class="fogetpass">
-                <button mat-button color="accent" (click)="forgetPassBtn()">¿Olvido su contraseña?</button>
+                <button mat-button color="accent" type="button" (click)="forgetPassBtn()">¿Olvido su contraseña?</button>
             </div>
             <div class="submitLog">
                 <button mat-raised-button color="accent" type="submit" [disabled]="!loginFormGroup.valid">Iniciar</button>

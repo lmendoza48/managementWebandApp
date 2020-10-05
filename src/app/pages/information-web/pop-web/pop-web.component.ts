@@ -12,7 +12,9 @@ import { NgForm } from '@angular/forms';
 export class PopWebComponent implements OnInit {
 
   constructor(public dialogRef : MatDialogRef<PopWebComponent>, 
-               public servics : WebinformationService) {}
+               public servics : WebinformationService) {
+                 dialogRef.disableClose = true;
+               }
 
   ngOnInit() {
       this.servics.getInformation();

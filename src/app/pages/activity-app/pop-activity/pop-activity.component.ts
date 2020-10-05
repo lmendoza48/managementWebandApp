@@ -16,7 +16,9 @@ export class PopActivityComponent implements OnInit {
   constructor( public dialogRef : MatDialogRef<PopActivityComponent>,
                public fbActt :  FormBuilder,
                public servActt : ActivityAppService,
-               @Inject(MAT_DIALOG_DATA) public data: ActivityModel) {}
+               @Inject(MAT_DIALOG_DATA) public data: ActivityModel) {
+                 dialogRef.disableClose = true;
+               }
 
   ngOnInit() {
      this.getDatosActt();

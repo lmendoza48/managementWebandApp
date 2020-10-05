@@ -14,7 +14,9 @@ export class PopEmailWebComponent implements OnInit {
   emailWeb: string;
   daySendWeb: number;
 
-  constructor(public dialogRef : MatDialogRef<PopEmailWebComponent>) { }
+  constructor(public dialogRef : MatDialogRef<PopEmailWebComponent>) { 
+    dialogRef.disableClose =true;
+  }
 
   ngOnInit() {
     this.titleWeb = sessionStorage.getItem('titleWeb');

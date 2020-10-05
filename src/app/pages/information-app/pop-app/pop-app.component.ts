@@ -15,7 +15,9 @@ export class PopAppComponent implements OnInit {
   thirdFormGroup : FormGroup;
 
   constructor(public servicesAPP : AppInformationService, 
-              public dialogRef :  MatDialogRef<PopAppComponent>) { }
+              public dialogRef :  MatDialogRef<PopAppComponent>) {
+                dialogRef.disableClose = true;
+               }
 
   ngOnInit() {
     this.servicesAPP.getConectListApp();
