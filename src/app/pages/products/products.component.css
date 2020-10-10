@@ -30,4 +30,11 @@
         width: -webkit-fill-available;
         margin-right: 1rem;
     }
+    .ordrs-card{
+        width: 80%;
+    }
+
+    .searchCompoProducts {
+        width: 65%;
+    }
 }

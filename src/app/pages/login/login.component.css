@@ -19,3 +19,9 @@ width: 100%;
 .submitLog{
     text-align: end;
 }
+
+@media only screen and (max-width: 800px) {
+    .card-group{
+        width: 80%;
+    }
+}
