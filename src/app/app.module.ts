@@ -43,6 +43,9 @@ import { DialogNewProductsComponent } from './pages/products/dialog-new-products
 import { LoginComponent } from './pages/login/login.component';
 import { LoginService } from './services/login.service';
 import { ContentPagesComponent } from './pages/content-pages/content-pages.component';
+import { OnlineTurnService } from './services/online-turn.service';
+import { OnlineTurnComponent } from './pages/online-turn/online-turn.component';
+import { PopUpOnlineturnComponent } from './pages/online-turn/pop-up-onlineturn/pop-up-onlineturn.component'
 
 @NgModule({
   declarations: [
@@ -65,7 +68,9 @@ import { ContentPagesComponent } from './pages/content-pages/content-pages.compo
     ProductsComponent,
     DialogNewProductsComponent,
     LoginComponent,
-    ContentPagesComponent
+    ContentPagesComponent,
+    OnlineTurnComponent,
+    PopUpOnlineturnComponent
   ],
   imports: [
     BrowserModule,
@@ -89,7 +94,8 @@ import { ContentPagesComponent } from './pages/content-pages/content-pages.compo
     PopEmailWebComponent,
     PopGaleriaComponent,
     PopActivityComponent,
-    DialogNewProductsComponent   
+    DialogNewProductsComponent,
+    PopUpOnlineturnComponent  
   ],
   providers: [
     ContactServiceWeb,
@@ -100,7 +106,8 @@ import { ContentPagesComponent } from './pages/content-pages/content-pages.compo
     MessaginPushService,
     AsyncPipe,
     ProductsService,
-    LoginService
+    LoginService,
+    OnlineTurnService
   ],
   bootstrap: [AppComponent]
 })

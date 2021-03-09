@@ -1,0 +1,41 @@
+<div class="closeBtnOnlineTurn">
+  <button mat-icon-button color="accent" type="button" mat-dialog-close>
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+
+<p class="titlestyleturn">{{formChargeTitle}}</p>
+
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="groupFormTurnOnline"  (ngSubmit)="onChargeDataTurnoOnline()">
+    <input type="hidden" name="$key" formControlName="$key">
+    <mat-form-field  class="forminputData">
+      <mat-label>Nombre</mat-label>
+      <input matInput formControlName="namePerson">
+    </mat-form-field>
+    <mat-form-field  class="forminputData">
+      <mat-label>Avatar Imagen</mat-label>
+      <input matInput formControlName="imgAvatar">
+    </mat-form-field>
+    <mat-form-field class="forminputData">
+      <mat-label>Ocupación</mat-label>
+      <input matInput formControlName="ocupation">
+    </mat-form-field>
+    <div class="hourAvalaible">
+      <p>{{timeAvaible}}</p>
+        <mat-selection-list #turn formControlName="hourSelect" class="hourselectavailable">
+          <mat-list-option *ngFor="let turn of hourSelectTurn" [value]="turn">
+            {{turn}}
+          </mat-list-option>
+      </mat-selection-list>
+    </div>
+    <div class="buttonAcctionSubmit">
+      <button mat-raised-button color="accent" type="submit" [disabled]="!groupFormTurnOnline.valid"> {{buttonActionturn}} </button>
+    </div>
+  </form> 
+
+</mat-dialog-content>
+
+
+<!-- select option 
+[(ngModel)]="selectedOptions" -->

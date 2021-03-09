@@ -1,0 +1,16 @@
+.onlinesearch-content{
+    width: 80%;
+    margin: 2rem;
+}
+.searchinput{
+    margin-right: 1rem;
+    width: 35%;
+}
+.card-tunrOnline{
+    margin: 1rem;
+}
+.styleTurnOnline{
+    width: 20%;
+    margin:20px;
+    display: inline-block;
+}
