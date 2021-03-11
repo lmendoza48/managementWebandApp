@@ -9,6 +9,7 @@ import { EmailWebComponent } from './pages/email-web/email-web.component';
 import { GalreiaIMGComponent } from './pages/galreia-img/galreia-img.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { LoginComponent } from './pages/login/login.component';
+import { OnlineTurnComponent } from './pages/online-turn/online-turn.component';
 
 
 const routes: Routes = [
@@ -47,6 +48,10 @@ const routes: Routes = [
   {
     path: 'products',
     component: ProductsComponent
+  },
+  {
+    path: 'turnonline',
+    component: OnlineTurnComponent
   }
 ];
 
