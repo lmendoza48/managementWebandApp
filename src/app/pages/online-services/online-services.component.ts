@@ -11,6 +11,8 @@ import { PopNewServiceComponent } from './pop-new-service/pop-new-service.compon
 })
 export class OnlineServicesComponent implements OnInit {
 
+  filterService: string = '';
+  titleOnlineTurnSecond = 'Prueba'
   titleService = 'Cargar Servicios';
   serviceList : OnlineService[];
   dialogRef : MatDialogRef<PopNewServiceComponent>;

@@ -3,13 +3,13 @@
       <div class="onlinesearch-content-service">
         <mat-form-field appearance="outline" class="searchinput-service">
           <mat-label>Buscar servicio</mat-label>
-          <input matInput placeholder="Buscar" [(ngModel)] = "filterTurn">
+          <input matInput placeholder="Buscar" [(ngModel)] = "filterService">
           <mat-icon matSuffix>search</mat-icon>
         </mat-form-field>
         <button mat-raised-button color="accent"  class ="btnSearchService" (click) ="openPopUpOnlineService()">Nuevo Servicio</button>
      </div>
      <div class=".card-serviceOnline">
-      <mat-card class="styleServiceOnline" *ngFor = "let item of serviceList | filter:filterTurn">
+      <mat-card class="styleServiceOnline" *ngFor = "let item of serviceList | filter:filterService">
               <mat-card-header>
                   <mat-card-title>{{item.serviceName}}</mat-card-title>
               </mat-card-header>
