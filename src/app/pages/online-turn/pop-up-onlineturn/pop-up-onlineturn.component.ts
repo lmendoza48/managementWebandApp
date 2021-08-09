@@ -13,15 +13,15 @@ export class PopUpOnlineturnComponent implements OnInit {
 
   
   hourSelectTurn = [
-    '9:00 a 10:00 hrs',
-    '10:00 a 11:00 hrs',
-    '11:00 a 12:00 hrs',
-    '13:00 a 14:00 hrs',
-    '14:00 a 15:00 hrs',
-    '16:00 a 17:00 hrs',
-    '18:00 a 19:00 hrs',
-    '19:00 a 20:00 hrs',
-    '21:00 a 22:00 hrs'];
+    '9:00 horas',
+    '10:00 horas',
+    '11:00 horas',
+    '13:00 horas',
+    '14:00 horas',
+    '16:00 horas',
+    '18:00 horas',
+    '19:00 horas',
+    '21:00 horas'];
   
   formChargeTitle='Carga de Formulario';
   buttonActionturn='Guardar Datos';
@@ -40,16 +40,22 @@ export class PopUpOnlineturnComponent implements OnInit {
       this.groupFormTurnOnline = this._formBuilder.group({
         $key : new FormControl(dat.$key),
         imgAvatar : [dat.img, Validators.required],
+        imgPresentation : [dat.imgPresentation, Validators.required],
+        imgInfo : [dat.imgInfo, Validators.required],
         namePerson : [ dat["name"], Validators.required],
         ocupation: [dat.ocupation, Validators.required],
+        descriptioOcupation : [dat.descriptioOcupation, Validators.required],
         hourSelect: ['', Validators.required]
       });  
     }else{
       this.groupFormTurnOnline = this._formBuilder.group({
         $key : new FormControl(''),
         imgAvatar : ['', Validators.required],
-        namePerson : [, Validators.required],
+        imgPresentation : ['', Validators.required],
+        imgInfo : ['', Validators.required],
+        namePerson : ['', Validators.required],
         ocupation: ['', Validators.required],
+        descriptioOcupation : ['', Validators.required],
         hourSelect: ['', Validators.required]
       });
     }

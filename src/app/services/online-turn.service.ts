@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { Shiefts } from '../models/shiefts';
 import { TurnModel } from '../models/turn.model';
 
 @Injectable({
@@ -8,12 +9,18 @@ import { TurnModel } from '../models/turn.model';
 export class OnlineTurnService {
 
   private dbConectTurnOnline :  AngularFireList<any>;
+  private dbConectShieftsAgend :  AngularFireList<any>;
   dataTurnOnline : TurnModel = new TurnModel();
+  shieftsSelect : Shiefts = new Shiefts();
 
   constructor(private dbFirelist : AngularFireDatabase) { }
 
   getConectListApp(){
     return this.dbConectTurnOnline = this.dbFirelist.list('/turnonline');
+  }
+
+  getConectListShieftAgen(){
+    return this.dbConectShieftsAgend = this.dbFirelist.list('/reservas');
   }
 
   insertTurnOnline(item : any){
@@ -22,7 +29,10 @@ export class OnlineTurnService {
       ocupation : item["ocupation"],
       hourAvalaible : item["hourSelect"],
       title : "Especialidad",
-      name : item["namePerson"]
+      name : item["namePerson"],
+      imgInfo : item["imgInfo"],
+      imgPresentation : item["imgPresentation"],
+      descriptioOcupation : item["descriptioOcupation"]
 
     })
   }
@@ -32,7 +42,10 @@ export class OnlineTurnService {
       img : item["imgAvatar"],
       ocupation : item["ocupation"],
       hourAvalaible : item["hourSelect"],
-      name : item["namePerson"]
+      name : item["namePerson"],
+      imgInfo : item["imgInfo"],
+      imgPresentation : item["imgPresentation"],
+      descriptioOcupation : item["descriptioOcupation"]
      });
   }
 

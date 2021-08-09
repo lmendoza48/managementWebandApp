@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material';
+import { Shiefts } from 'src/app/models/shiefts';
 import { TurnModel } from 'src/app/models/turn.model';
 import { OnlineTurnService } from 'src/app/services/online-turn.service';
 import { PopUpOnlineturnComponent } from './pop-up-onlineturn/pop-up-onlineturn.component';
@@ -13,8 +14,10 @@ export class OnlineTurnComponent implements OnInit {
 
   filterTurn : string = '';
   titleOnlineTurn : string = 'carga de datos turno online';
+  titleOnlineTurnSecond : string = 'turnos agendados';
   dialogRef : MatDialogRef<PopUpOnlineturnComponent>;
   turnList : TurnModel[];
+  shieftList : Shiefts[];
 
   constructor(public dialog : MatDialog,
               public service : OnlineTurnService) { }
@@ -28,6 +31,22 @@ export class OnlineTurnComponent implements OnInit {
           it["$key"] = list.key;
           this.turnList.push(it as TurnModel);
       });
+    });
+
+    let resers = this.service.getConectListShieftAgen();
+    resers.snapshotChanges().subscribe(shieft =>{
+        this.shieftList = [];
+        shieft.forEach(shf =>{
+             let ig = shf.payload.toJSON();
+             let namespeciality = shf.key;
+             Object.entries(ig).forEach(([key, value]) => {
+                let vv = value;
+                vv["$key"] = key;
+                vv["speciality"] = namespeciality;
+                this.shieftList.push(vv as Shiefts);
+            }
+            );
+        })
     });
   }
 

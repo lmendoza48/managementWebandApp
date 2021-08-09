@@ -45,7 +45,10 @@ import { LoginService } from './services/login.service';
 import { ContentPagesComponent } from './pages/content-pages/content-pages.component';
 import { OnlineTurnService } from './services/online-turn.service';
 import { OnlineTurnComponent } from './pages/online-turn/online-turn.component';
-import { PopUpOnlineturnComponent } from './pages/online-turn/pop-up-onlineturn/pop-up-onlineturn.component'
+import { PopUpOnlineturnComponent } from './pages/online-turn/pop-up-onlineturn/pop-up-onlineturn.component';
+import { OnlineServicesComponent } from './pages/online-services/online-services.component';
+import { PopNewServiceComponent } from './pages/online-services/pop-new-service/pop-new-service.component'
+import { OnlineServicesService } from './services/online-services.service';
 
 @NgModule({
   declarations: [
@@ -70,7 +73,9 @@ import { PopUpOnlineturnComponent } from './pages/online-turn/pop-up-onlineturn/
     LoginComponent,
     ContentPagesComponent,
     OnlineTurnComponent,
-    PopUpOnlineturnComponent
+    PopUpOnlineturnComponent,
+    OnlineServicesComponent,
+    PopNewServiceComponent
   ],
   imports: [
     BrowserModule,
@@ -95,7 +100,8 @@ import { PopUpOnlineturnComponent } from './pages/online-turn/pop-up-onlineturn/
     PopGaleriaComponent,
     PopActivityComponent,
     DialogNewProductsComponent,
-    PopUpOnlineturnComponent  
+    PopUpOnlineturnComponent,
+    PopNewServiceComponent
   ],
   providers: [
     ContactServiceWeb,
@@ -107,7 +113,8 @@ import { PopUpOnlineturnComponent } from './pages/online-turn/pop-up-onlineturn/
     AsyncPipe,
     ProductsService,
     LoginService,
-    OnlineTurnService
+    OnlineTurnService,
+    OnlineServicesService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,34 @@
+<div class="closeBtnOnlineTurn">
+    <button mat-icon-button color="accent" type="button" mat-dialog-close>
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  
+  <p class="titlestyleturn">{{formChargeTitle}}</p>
+  
+  <mat-dialog-content class="mat-typography">
+    <form [formGroup]="groupFormOnlineService"  (ngSubmit)="onChargeDataOnlineService()">
+      <input type="hidden" name="$key" formControlName="$key">
+      <mat-form-field  appearance="outline" class="forminputData">
+        <mat-label>Nombre del Servicio</mat-label>
+        <input matInput formControlName="serviceName">
+      </mat-form-field>
+      <mat-form-field  appearance="outline" class="forminputData">
+        <mat-label>Imagen Presentación </mat-label>
+        <input matInput formControlName="imgPresentation">
+      </mat-form-field>
+      <mat-form-field  appearance="outline" class="forminputData">
+        <mat-label>Imagen Servicio </mat-label>
+        <input matInput formControlName="imgtext">
+      </mat-form-field>
+      <mat-checkbox class="csscheckBox"  formControlName="isButtonActive">Activar botón de registro</mat-checkbox>
+      <mat-form-field appearance="outline" class="forminputData text-css-style-new">
+        <mat-label>Texto de información</mat-label>
+        <textarea matInput placeholder="Breve descripcion..." formControlName="textinfo"></textarea>
+      </mat-form-field>  
+      <div class="buttonAcctionSubmit">
+        <button mat-raised-button color="accent" type="submit" [disabled]="!groupFormOnlineService.valid"> {{buttonActionturn}} </button>
+      </div>
+    </form> 
+  
+  </mat-dialog-content>
