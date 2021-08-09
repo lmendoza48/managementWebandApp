@@ -10,6 +10,7 @@ import { GalreiaIMGComponent } from './pages/galreia-img/galreia-img.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { LoginComponent } from './pages/login/login.component';
 import { OnlineTurnComponent } from './pages/online-turn/online-turn.component';
+import { OnlineServicesComponent } from './pages/online-services/online-services.component';
 
 
 const routes: Routes = [
@@ -52,6 +53,10 @@ const routes: Routes = [
   {
     path: 'turnonline',
     component: OnlineTurnComponent
+  },
+  {
+    path: 'onlinservice',
+    component: OnlineServicesComponent
   }
 ];
 

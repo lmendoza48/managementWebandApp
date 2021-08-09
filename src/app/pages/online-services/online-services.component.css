@@ -1,0 +1,16 @@
+.onlinesearch-content-service{
+    width: 80%;
+    margin: 2rem;
+}
+.searchinput-service{
+    margin-right: 1rem;
+    width: 35%;
+}
+.card-serviceOnline{
+    margin: 1rem;
+}
+.styleServiceOnline{
+    width: 20%;
+    margin:20px;
+    display: inline-block;
+}

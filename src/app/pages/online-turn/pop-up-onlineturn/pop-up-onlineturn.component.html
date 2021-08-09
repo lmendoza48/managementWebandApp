@@ -9,17 +9,29 @@
 <mat-dialog-content class="mat-typography">
   <form [formGroup]="groupFormTurnOnline"  (ngSubmit)="onChargeDataTurnoOnline()">
     <input type="hidden" name="$key" formControlName="$key">
-    <mat-form-field  class="forminputData">
+    <mat-form-field  appearance="outline" class="forminputData">
       <mat-label>Nombre</mat-label>
       <input matInput formControlName="namePerson">
     </mat-form-field>
-    <mat-form-field  class="forminputData">
+    <mat-form-field  appearance="outline" class="forminputData">
       <mat-label>Avatar Imagen</mat-label>
       <input matInput formControlName="imgAvatar">
     </mat-form-field>
-    <mat-form-field class="forminputData">
+    <mat-form-field  appearance="outline" class="forminputData">
+      <mat-label>Imagen Presentación </mat-label>
+      <input matInput formControlName="imgInfo">
+    </mat-form-field>
+    <mat-form-field  appearance="outline" class="forminputData">
+      <mat-label>Imagen Especialista </mat-label>
+      <input matInput formControlName="imgPresentation">
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="forminputData">
       <mat-label>Ocupación</mat-label>
       <input matInput formControlName="ocupation">
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="forminputData">
+      <mat-label>Descripción de Ocupación</mat-label>
+      <textarea matInput placeholder="Breve descripcion..." formControlName="descriptioOcupation"></textarea>
     </mat-form-field>
     <div class="hourAvalaible">
       <p>{{timeAvaible}}</p>
@@ -29,6 +41,7 @@
           </mat-list-option>
       </mat-selection-list>
     </div>
+
     <div class="buttonAcctionSubmit">
       <button mat-raised-button color="accent" type="submit" [disabled]="!groupFormTurnOnline.valid"> {{buttonActionturn}} </button>
     </div>

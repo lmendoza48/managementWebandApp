@@ -1,0 +1,26 @@
+
+.closeBtnOnlineTurn{
+    text-align: end;
+    margin-bottom: 10px;
+}
+.titlestyleturn{
+    font-size: 18px;
+    font-weight: 500;
+}
+.forminputData{
+    width: 80%;
+}
+.hourAvalaible{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.hourselectavailable{
+    overflow: auto;
+    height: 12rem;
+}
+.buttonAcctionSubmit{
+    text-align: end;
+}
+.text-css-style-new{
+    margin-top: 2rem;
+}
