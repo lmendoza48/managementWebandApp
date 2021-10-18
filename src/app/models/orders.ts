@@ -11,4 +11,6 @@ export class Orders {
     totalPay: number;
     status: string;
     date : number;
+    statuspayment : string;
+    methopayment : string;
 }

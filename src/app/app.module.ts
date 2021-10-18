@@ -49,6 +49,7 @@ import { PopUpOnlineturnComponent } from './pages/online-turn/pop-up-onlineturn/
 import { OnlineServicesComponent } from './pages/online-services/online-services.component';
 import { PopNewServiceComponent } from './pages/online-services/pop-new-service/pop-new-service.component'
 import { OnlineServicesService } from './services/online-services.service';
+import { OrderModule } from 'ngx-order-pipe';
 
 @NgModule({
   declarations: [
@@ -90,7 +91,8 @@ import { OnlineServicesService } from './services/online-services.service';
     Ng2SearchPipeModule,
     ReactiveFormsModule,
     AngularFirestoreModule,
-    NgpSortModule
+    NgpSortModule,
+    OrderModule
   ],
   entryComponents:[
     PopWebComponent,

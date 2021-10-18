@@ -10,4 +10,6 @@ export class Shiefts {
     dateselect : string;
     hourselect : string; 
     speciality : string;
+    methodpay: string;
+    statuspayment: string; 
 }
