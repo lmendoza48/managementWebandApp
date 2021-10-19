@@ -6,12 +6,13 @@
 }
 .searchCompoProducts{
     width: 30%;
-    margin: 1rem;
+    margin-top: 20px;
+    margin-left: 30px;
 }
 .ordrs-card{
     width: 30%;
-    margin: 2rem;
     float: left;
+    margin: 10px 30px;
 }
 .contentOrds{
     margin-top: 1rem;
@@ -23,6 +24,13 @@
 }
 .addressStreet{
     margin-bottom: 25px;
+}
+.billingdata{
+    padding: 2px 0px;
+}
+
+.separatebilling{
+    padding: 0px 20px;
 }
 
 @media only screen and (max-width: 800px) {

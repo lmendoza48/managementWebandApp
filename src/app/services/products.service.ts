@@ -12,7 +12,8 @@ export class ProductsService {
   private dbConectListProducts :  AngularFireList<any>;
   dataProducts : Products = new Products();
 
-  constructor(private dbFirelist : AngularFireDatabase, public fire : AngularFirestore) {}
+  constructor(private dbFirelist : AngularFireDatabase, 
+              public fire : AngularFirestore) {}
 
   getConectListAppProducts(){
     return this.dbConectListProducts = this.dbFirelist.list('/products');

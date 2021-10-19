@@ -55,8 +55,19 @@ export class OnlineTurnComponent implements OnInit {
       columnDef: 'hourselect',
       header: 'Hora del turno',
       cell: (element: Shiefts) => `${element.hourselect}`
+    },
+    {
+      columnDef: 'methodpay',
+      header: 'Metodo de pago',
+      cell: (element: Shiefts) => `${element.methodpay}`
+    },
+    {
+      columnDef: 'statuspayment',
+      header: 'Estatus',
+      cell: (element: Shiefts) => `${element.statuspayment}`
     }
   ];
+
   displayedColumns = this.columns.map(c => c.columnDef);
   dataSource: MatTableDataSource<Shiefts>;
 

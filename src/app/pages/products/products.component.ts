@@ -4,8 +4,6 @@ import { DialogNewProductsComponent } from './dialog-new-products/dialog-new-pro
 import { Products } from 'src/app/models/products';
 import { ProductsService } from 'src/app/services/products.service';
 import { Orders } from 'src/app/models/orders';
-import { ProductsBuy } from 'src/app/models/products-buy';
-import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-products',
@@ -50,6 +48,8 @@ export class ProductsComponent implements OnInit {
             totalPay: e.payload.doc.data()['totalBuy'] as number,
             status: e.payload.doc.data()['status'] as string,
             date : e.payload.doc.data()['date'] as number,
+            methopayment : e.payload.doc.data()['methodpay'] as string,
+            statuspayment : e.payload.doc.data()['statusspay'] as string,
           };
         })
         dats.forEach( od => {

@@ -36,7 +36,7 @@
     </div>
 
     <div class="cardWeball">
-        <mat-card class="ordrs-card" *ngFor="let ords of ordsProduc | sortBy: 'asc'  | filter:datafilterOrds">
+        <mat-card class="ordrs-card" *ngFor="let ords of ordsProduc | orderBy: date  | filter:datafilterOrds">
             <mat-card-header>
                 <mat-card-title>Orden: #{{ords.order}}</mat-card-title>
                 <mat-card-subtitle> <p> Status: {{ords.status}} </p>  <p>Fecha Compra: {{ords.date | date:'short'}} </p></mat-card-subtitle>
@@ -44,17 +44,27 @@
             <mat-divider></mat-divider>
             <mat-card-content class="contentOrds">
                 <div class="conteListOrds_1">
-                    <p>Productos:</p>
+                    <p><b> Productos </b>:</p>
                     <mat-list *ngFor="let prd of ords.productsData">
                         <mat-list-item> {{prd.cantidadBuy}}x - {{prd.name}} -- {{prd.price | currency}}</mat-list-item>
                     </mat-list>
                 </div>
                 <mat-divider></mat-divider>
                     <div class="addressStreet">
-                        <p>Dirección de entrega:</p>
+                        <p> <b>Dirección de entrega</b>:</p>
                         <span style="padding-left: 20px;"> {{ords.address}} </span>
                     </div>
                 <mat-divider></mat-divider>
+                    <div class="billingdata">
+                        <p><b>Datos del pago</b></p>
+                        <div class="separatebilling">
+                            <p>Nombre del comprador: {{ords.name}}</p>
+                            <p>Estatus del pago: {{ords.statuspayment}} </p>
+                            <p>Metodo de pago: {{ords.methopayment}}</p>
+                        </div>
+                    </div>
+                <mat-divider></mat-divider>
+
                 <p  style="text-align: end; margin-top: 42px;"> Total : {{ords.totalPay | currency}}</p>
                 <button mat-raised-button color="accent" (click)="updateStatusOrdrs(ords)" [disabled]="ords.status == 'closed'">Cambiar estatus</button>
             </mat-card-content>
