@@ -17,6 +17,8 @@ export class ProductsComponent implements OnInit {
   datafilterProdcts : string;
   ordsProduc : Orders[];
   datafilterOrds : string;
+  order: string = 'date';
+  reverse: boolean = true;
 
 
   constructor(public service : ProductsService, 

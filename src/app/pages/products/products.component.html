@@ -36,7 +36,7 @@
     </div>
 
     <div class="cardWeball">
-        <mat-card class="ordrs-card" *ngFor="let ords of ordsProduc | orderBy: date  | filter:datafilterOrds">
+        <mat-card class="ordrs-card" *ngFor="let ords of ordsProduc | orderBy: order : reverse  | filter:datafilterOrds">
             <mat-card-header>
                 <mat-card-title>Orden: #{{ords.order}}</mat-card-title>
                 <mat-card-subtitle> <p> Status: {{ords.status}} </p>  <p>Fecha Compra: {{ords.date | date:'short'}} </p></mat-card-subtitle>
