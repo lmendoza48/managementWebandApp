@@ -79,14 +79,42 @@ export class OnlineTurnComponent implements OnInit {
     let data = this.service.getConectListApp();
     data.snapshotChanges().subscribe(item => {
       this.turnList = [];
+      this.shieftList = [];
       item.forEach(list => {
           let it = list.payload.toJSON();
           it["$key"] = list.key;
           this.turnList.push(it as TurnModel);
-      });
+
+          let reserv2 = this.service.onGetFireStoreDataReserva(it["ocupation"]);
+          reserv2.subscribe(rs2 =>{
+              let dats = rs2.map(e => {
+                return {
+                  $key: e.payload.doc.id,
+                  nameFather : e.payload.doc.data()['nameFather'] as string,
+                  nameChild : e.payload.doc.data()['nameChild'] as string,
+                  agefather : e.payload.doc.data()['agefather'] as string,
+                  ageChild : e.payload.doc.data()['ageChild'] as string,
+                  documentFather : e.payload.doc.data()['documentFather'] as string ,
+                  emailfather: e.payload.doc.data()['emailfather'] as string, 
+                  sexChild: e.payload.doc.data()['sexChild'] as string, 
+                  dateselect: e.payload.doc.data()['dateselect'] as string,
+                  hourselect: e.payload.doc.data()['hourselect'] as string,
+                  methodpay: e.payload.doc.data()['methodpay'] as string,
+                  statuspayment: e.payload.doc.data()['statuspayment'] as string, 
+                  key_cod: e.payload.doc.data()['key_cod'] as string
+                }
+            });
+            dats.forEach( od => {
+              od["speciality"] = it["ocupation"];
+              od["dateselect"] = new Date(od.dateselect).toLocaleDateString("en-US")
+              this.shieftList.push(od as unknown as Shiefts);
+            });
+            this.dataSource = new MatTableDataSource(this.shieftList);  
+        });
+      });  
     });
-    
-    let resers = this.service.getConectListShieftAgen();
+
+     /* let resers = this.service.getConectListShieftAgen();
     resers.snapshotChanges().subscribe(shieft =>{
         this.shieftList = [];
         shieft.forEach(shf =>{
@@ -103,6 +131,7 @@ export class OnlineTurnComponent implements OnInit {
         });
         this.dataSource = new MatTableDataSource(this.shieftList);
     });
+ */
   }
 
   openPopUpChargedata(){
