@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { Shiefts } from '../models/shiefts';
 import { TurnModel } from '../models/turn.model';
@@ -13,7 +14,8 @@ export class OnlineTurnService {
   dataTurnOnline : TurnModel = new TurnModel();
   shieftsSelect : Shiefts = new Shiefts();
 
-  constructor(private dbFirelist : AngularFireDatabase) { }
+  constructor(private dbFirelist : AngularFireDatabase,
+              private fire : AngularFirestore) { }
 
   getConectListApp(){
     return this.dbConectTurnOnline = this.dbFirelist.list('/turnonline');
@@ -22,6 +24,11 @@ export class OnlineTurnService {
   getConectListShieftAgen(){
     return this.dbConectShieftsAgend = this.dbFirelist.list('/reservas');
   }
+
+  onGetFireStoreDataReserva(ocupation : string){
+    return this.fire.collection('reservas').doc(ocupation).collection('turn_').snapshotChanges();
+  }
+
 
   insertTurnOnline(item : any){
     this.dbConectTurnOnline.push({
