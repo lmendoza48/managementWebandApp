@@ -50,6 +50,7 @@ import { OnlineServicesComponent } from './pages/online-services/online-services
 import { PopNewServiceComponent } from './pages/online-services/pop-new-service/pop-new-service.component'
 import { OnlineServicesService } from './services/online-services.service';
 import { OrderModule } from 'ngx-order-pipe';
+import { UpdateregisterpopupComponent } from './pages/online-turn/updateregisterpopup/updateregisterpopup.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,8 @@ import { OrderModule } from 'ngx-order-pipe';
     OnlineTurnComponent,
     PopUpOnlineturnComponent,
     OnlineServicesComponent,
-    PopNewServiceComponent
+    PopNewServiceComponent,
+    UpdateregisterpopupComponent
   ],
   imports: [
     BrowserModule,
@@ -103,7 +105,8 @@ import { OrderModule } from 'ngx-order-pipe';
     PopActivityComponent,
     DialogNewProductsComponent,
     PopUpOnlineturnComponent,
-    PopNewServiceComponent
+    PopNewServiceComponent,
+    UpdateregisterpopupComponent
   ],
   providers: [
     ContactServiceWeb,

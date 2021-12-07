@@ -1,0 +1,27 @@
+<div class="closeBtnOnlineTurn">
+    <button mat-icon-button color="accent" type="button" mat-dialog-close>
+      <mat-icon>close</mat-icon>
+    </button>
+</div>
+<h1 mat-dialog-title>Información paciente</h1>
+<div mat-dialog-content>
+  <p><strong> Datos del Padre </strong></p>
+  <p>Nombre completo: {{service.shieftsSelect.nameFather}}</p>
+  <p>Edad: {{service.shieftsSelect.agefather}}</p>
+  <p>DNI: {{service.shieftsSelect.documentFather}}</p>
+  <p>email: {{service.shieftsSelect.emailfather}}</p>
+  <p><strong> Datos del paciente </strong></p>
+  <p>Nombre : {{service.shieftsSelect.nameChild}}</p>
+  <p>Edad : {{service.shieftsSelect.ageChild}}</p>
+  <p><strong> Datos del turno </strong></p>
+  <p>Dia : {{service.shieftsSelect.dateselect}}</p>
+  <p>Hora : {{service.shieftsSelect.hourselect}}</p>
+  <p>Especialista: {{service.shieftsSelect.speciality}}</p>
+  <p><strong> Datos de facturación </strong></p>
+  <p>Medio de pago: {{service.shieftsSelect.methodpay}}</p>
+  <p>Estado del pago: {{service.shieftsSelect.statuspayment}}</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button color="accent" (click)="onUpdatePayment()" *ngIf="service.shieftsSelect.methodpay == 'transferencia' && service.shieftsSelect.statuspayment != 'aprobado' ">Actualizar pago</button>
+  <button mat-raised-button color="warn" (click)="onDeleteTurn()">Eliminar turno</button>
+</div>

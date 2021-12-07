@@ -59,4 +59,24 @@ export class OnlineTurnService {
   deleteDataProducts(key : string){
     this.dbConectTurnOnline.remove(key);
   }
+
+  onUpdateReservaOnline(completeData : Shiefts){    
+    this.fire.collection("reservas").doc(completeData.speciality).collection("turn_").doc(completeData.$key.toString()).update({
+        statuspayment : 'aprobado'
+    }).then( data => {
+       console.log('datos guardados', data);
+    }).catch( error =>
+     {
+       console.error('error al actualizar', error);
+     });
+  }
+
+  onDeleteReservaPaciente(completeData : Shiefts){    
+    this.fire.collection("reservas").doc(completeData.speciality).collection("turn_").doc(completeData.$key.toString()).delete().then( data => {
+       console.log('datos eliminados', data);
+    }).catch( error =>
+     {
+       console.error('error al elminar', error);
+     });
+  }
 }
